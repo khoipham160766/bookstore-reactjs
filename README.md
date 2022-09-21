@@ -1,7 +1,7 @@
-##Front-end
+## Front-end
 - ReactJS
 - Bootstrap
-##Back-end
+## Back-end
 - Spring Boot
-##Database
+## Database
 - MySQL
