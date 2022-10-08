@@ -186,6 +186,7 @@
     .offcanvas-collapse.open {
         visibility: visible;
         transform: translateX(-100%);
+        z-index: 100;
     }
     /*  custom dropdown */
     .div-sub-category{
