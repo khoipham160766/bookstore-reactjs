@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import LayoutUser from './layout/user';
 import HomePage from './pages/user/homePage';
+import RecommendPage from './pages/user/recommend';
 import ContactPage from './pages/user/contactPage';
 import ProductsPage from './pages/user/productsPage';
 import LoginPage from './pages/user/loginPage';
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutUser/>}>
             <Route path="contact" element={<ContactPage/>} />
+            <Route path="recommend" element={<RecommendPage/>} />
             <Route path="product" element={<ProductsPage/>} />
             <Route path="home" element={<HomePage/>} />
             <Route index element={<HomePage/>} />

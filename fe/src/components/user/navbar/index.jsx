@@ -48,7 +48,7 @@ const Navigation = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/products" className="nav-link" replace >
+                                <Link to="/recommend" className="nav-link" replace >
                                     GIỚI THIỆU
                                 </Link>
                             </li>
@@ -72,7 +72,7 @@ const Navigation = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/products" className="nav-link" replace >
+                                <Link to="/contact" className="nav-link" replace >
                                     LIÊN HỆ
                                 </Link>
                             </li>
