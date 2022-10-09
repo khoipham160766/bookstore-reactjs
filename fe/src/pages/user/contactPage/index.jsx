@@ -40,7 +40,6 @@ const ContactPage = () => {
                     </div>
                 </div>
             </div>
-            
         </Fragment>
     )
 }
