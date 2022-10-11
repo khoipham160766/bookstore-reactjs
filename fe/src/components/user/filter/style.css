@@ -1,0 +1,34 @@
+/* filter products */
+.filter-product .title-filter-product{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.filter-product .btn-dark-custom{
+    font-weight: bold !important;
+}
+.filter-product .btn-dark-custom:hover{
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+.filter-product .title-filter-product h1{
+    font-size: 22px;
+    text-align: left;
+    padding: 17px;
+    padding-bottom: 10px;
+    border-bottom: none;
+    margin-top: 23px;
+    font-weight: 700;
+    color: #ff0000;
+}
+.filter-product .list-filter h5{
+    font-size: 17px;
+    padding-bottom: 10px ;
+    font-weight: bold;
+}
+.filter-product .list-filter .form-check{
+    color: #777777 !important;
+    font-size: 15px;
+}
+.filter-product .list-filter .form-check-input:checked{
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
