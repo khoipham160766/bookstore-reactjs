@@ -54,7 +54,7 @@ const Navigation = () => {
                             </li>
                             <li className="nav-item main-menu-product">
                                 <div className="log-mb-tl">
-                                    <Link to="/products" className="nav-link nav-link-custom" replace >
+                                    <Link to="/product" className="nav-link nav-link-custom" replace >
                                         SẢN PHẨM
                                     </Link>
                                     <FontAwesomeIcon icon={faChevronDown} className="carret-down" onClick={changeStateMenu}/>
