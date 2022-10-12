@@ -7,6 +7,7 @@ import ProductsPage from './pages/user/productsPage';
 import LoginPage from './pages/user/loginPage';
 import RegisterPage from './pages/user/registerPage';
 import ForgotPasswordPage from './pages/user/forgotPasswordPage';
+import DetailProductPage from './pages/user/detailProductPage';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="contact" element={<ContactPage/>} />
             <Route path="recommend" element={<RecommendPage/>} />
             <Route path="product" element={<ProductsPage/>} />
+            <Route path="detail" element={<DetailProductPage/>} />
             <Route path="home" element={<HomePage/>} />
             <Route index element={<HomePage/>} />
         </Route>

@@ -3,7 +3,7 @@
     cursor: pointer;
 }
 .card-product:hover{
-    border: 1px solid #000000;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 }
 .card-product:hover .content .box-hover{
     opacity: 1;
@@ -24,10 +24,13 @@
     width: 100%;
     margin-top: 2px;
 }
-.card-product .image{
+/* .card-product .image{
     padding: 1rem;
-    background: linear-gradient(24deg, #BBBBBB 40%, #fff 30.1%);
+    background: linear-gradient(24deg, #edeaea 40%, #fff 30.1%);
 }
+.card-product:hover .image{
+    background: linear-gradient(24deg, #0b0b0b 40%, #fff 30.1%);
+} */
 .card-product .content{
     text-align: center;
     position: relative;
@@ -54,7 +57,7 @@
     content: "₫";
 }
 .card-product .content .box-hover{
-    background-color: #BBBBBB;
+    background-color: #000000;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -70,10 +73,9 @@
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    background-color: #eee;
-    margin-right: 10px;
-    margin-top: 17px;
-    color: #bbbbbb;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 17px 10px 0 10px;
 }
 .card-product .content .box-hover .add-cart:hover{
     color: #ffffff;
@@ -82,9 +84,9 @@
 .card-product .content .box-hover .product-detail{
     border-radius: 50%;
     padding: 7px 10px 7px 10px;
-    background-color: #eee;
+    background-color: #ffffff;
     margin-right: 10px;
-    color: #bbbbbb;
+    color: #000000;
 }
 .card-product .content .box-hover .product-detail:hover{
     color: #ffffff;
@@ -136,6 +138,20 @@
     background: #fff;
     border-left: 6px solid #ff0000;
     font-size: 19px;
+}
+/* list product */
+.load-more{
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.load-more:hover{
+    border: 1px solid #009900;
+    color: #ffffff;
+    background-color: #009900;;
 }
 @media only screen AND (max-width: 655px){
     .see-more{

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import "./style.css";
 import SpecialRowProduct from "../../../components/user/product/specialRowProduct";
 import NormalRowProduct from "../../../components/user/product/normalRowProduct";
+import Slider from "../../../components/user/carousel";
 
 const HomePage = () => {
     const config_screen_swiper = {
@@ -28,6 +29,7 @@ const HomePage = () => {
     }
     return(
         <Fragment>
+            <Slider/>
             <div className="container py-4 px-4 justify-content-center">
                 <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="BÁN CHẠY"/>
                 <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="MỚI RA MẮT"/>

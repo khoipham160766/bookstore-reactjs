@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import FilterProduct from "../../../components/user/filter/filterProduct";
+import SortProduct from "../../../components/user/filter/sortProduct";
+import ListProduct from "../../../components/user/product/listProduct";
 
 const ProductsPage = () => {
     return(
@@ -10,7 +12,10 @@ const ProductsPage = () => {
                         <FilterProduct />
                     </div>
                     <div className="col-lg-9">
-                        list
+                        <div className="d-flex flex-column h-100">
+                            <SortProduct />
+                            <ListProduct />
+                        </div>
                     </div>
                 </div>
             </div>

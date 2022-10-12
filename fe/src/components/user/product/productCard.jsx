@@ -12,9 +12,11 @@ const ProductCard = props => {
                 <div className="sale-percent">
                     <span>25%</span>
                 </div>
-                <div className="image">
-                    <img src="../../images/book-1.jpg" alt=""/>
-                </div>
+                <Link to="/detail">
+                    <div className="image">
+                        <img src="../../images/book-1.jpg" alt=""/>
+                    </div>
+                </Link>
                 <div className="content">
                     <h2 className="product-name">
                         Sách văn học thời kì trung đại đến hiện đại
@@ -28,7 +30,7 @@ const ProductCard = props => {
                             <button className="add-cart"><FontAwesomeIcon icon={faCartShopping}/></button>
                         </Tooltip>
                         <Tooltip placement="bottom" title="Chi tiết">
-                            <Link className="product-detail"><FontAwesomeIcon icon={faSearch}/></Link>
+                            <Link to="/detail" className="product-detail"><FontAwesomeIcon icon={faSearch}/></Link>
                         </Tooltip>
                     </div>
                 </div>
