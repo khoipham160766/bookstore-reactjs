@@ -8,6 +8,8 @@ import LoginPage from './pages/user/loginPage';
 import RegisterPage from './pages/user/registerPage';
 import ForgotPasswordPage from './pages/user/forgotPasswordPage';
 import DetailProductPage from './pages/user/detailProductPage';
+import LayoutManageUser from './pages/user/manage';
+import NewsPage from './pages/user/newsPage';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -22,6 +24,10 @@ function App() {
             <Route path="product" element={<ProductsPage/>} />
             <Route path="detail" element={<DetailProductPage/>} />
             <Route path="home" element={<HomePage/>} />
+            <Route path="news" element={<NewsPage/>} />
+            <Route path="manage/account" element={<LayoutManageUser/>}>
+
+            </Route>
             <Route index element={<HomePage/>} />
         </Route>
         <Route path='/login' element={<LoginPage/>}/>

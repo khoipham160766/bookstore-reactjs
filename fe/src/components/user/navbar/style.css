@@ -1,3 +1,10 @@
+.color-navbar .nav-link{
+    color: #000000 !important;
+    font-weight: 500;
+}
+.color-navbar .nav-link:hover{
+    color: #ff0000 !important;
+}
 .nav{
     width: 100%;
     float: left;
@@ -137,15 +144,16 @@
     margin-right: 20px;
     margin-left: 10px;
     float: right;
+    color: #000000;
 }
 .search-click:hover svg{
-    color: #ff0000;
+    color: #cc0033;
 }
 .search-click form{
     float: right;
 }
 .search-click form input[type=text]{
-    border: 1px solid #777777;
+    border: 2px solid #000000;
     outline: none;
     height: 32px;
     width: 150px;
@@ -159,14 +167,29 @@
     font-size: 19px;
     position: relative;
 }
+.div-log-dt svg{
+    color: #000000;
+}
 .div-log-dt:hover svg{
-    color: #ff0000;
+    color: #cc0033;
 }
 .div-search-form{
     display: none;
 }
 .div-search-form-active{
     display: block !important;
+}
+.cart-border{
+    border: 3px solid #000000 !important;
+    color: #000000 !important;
+}
+.cart-border:hover{
+    background-color: #cc0033 !important;
+    color: #000000 !important;
+}
+.cart-border span{
+    color: #ffffff !important;
+    background-color: #000000 !important ;
 }
 @media (max-width: 991.98px) {
     .offcanvas-collapse {

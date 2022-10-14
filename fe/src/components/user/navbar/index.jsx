@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser , faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style.css";
 
 const Navigation = () => {
@@ -25,7 +25,7 @@ const Navigation = () => {
     }
     return(
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+            <nav className="color-navbar navbar navbar-expand-lg navbar-light border-bottom ">
                 <div className="container-fluid">
                     {/* logo */}
                     <Link className="navbar-brand" to="/" >
@@ -33,7 +33,7 @@ const Navigation = () => {
                     </Link>
                     {/* category  */}
                     <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? 'open' : '')}>
-                        <ul className="navbar-nav me-auto mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-lg-0 custom-menu-nav">
                             <li className="nav-item div-search-tl-mb">
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2" type="search" aria-label="Search"/>
@@ -43,9 +43,9 @@ const Navigation = () => {
                                 </form>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link" replace >
+                                <NavLink to="/" className="nav-link" replace >
                                     TRANG CHỦ
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
                                 <Link to="/recommend" className="nav-link" replace >
@@ -67,7 +67,7 @@ const Navigation = () => {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link to="/products" className="nav-link" replace>
+                                <Link to="/news" className="nav-link" replace>
                                     TIN TỨC
                                 </Link>
                             </li>
@@ -76,8 +76,13 @@ const Navigation = () => {
                                     LIÊN HỆ
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/manage/account" className="nav-link" replace >
+                                    QUẢN LÝ
+                                </Link>
+                            </li>
                         </ul>
-                        <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
+                        <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline cart-border">
                             <FontAwesomeIcon icon={faCartShopping} />
                             <span className="ms-3 badge rounded-pill bg-dark">0</span>
                         </button>
@@ -108,7 +113,7 @@ const Navigation = () => {
                     </div>
     
                     <div className="d-inline-block d-lg-none">
-                        <button type="button" className="btn btn-outline-dark">
+                        <button type="button" className="btn btn-outline-dark cart-border">
                             <FontAwesomeIcon icon={faCartShopping} />
                             <span className="ms-3 badge rounded-pill bg-dark">0</span>
                         </button>
