@@ -153,6 +153,160 @@
     color: #ffffff;
     background-color: #009900;;
 }
+/* detail product */
+.detail-product-page .image-vertical-scroller{
+    overflow-y: auto;
+    max-height: 480px;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+.detail-product-page .image-vertical-scroller::-webkit-scrollbar{
+    width: 0 !important;
+    display: none; 
+}
+.detail-product-page .image-vertical-scroller img{
+    padding: 2px;
+    border: 1px solid rgba(0 ,0, 0, .1);
+    cursor: pointer;
+}
+.detail-product-page .image-vertical-scroller .opacity-img{
+    opacity: 0.6;
+}
+.detail-product-page .image-vertical-scroller .opacity-img:hover{
+    opacity: 1;
+}
+.detail-product-page .main-image img{
+    width: 500px;
+}
+.detail-product-page .detail-content-product h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4c03f8;
+}
+.detail-product-page .detail-content-product dl dd {
+    font-size: 14px;
+}
+.detail-product-page .detail-content-product dl dt {
+    font-size: 14px;
+}
+.detail-product-page .detail-content-product .price {
+    font-size: 33px;
+    font-weight: bold;
+    color: #CC0033;
+    margin-right: 20px;
+}
+.detail-product-page .detail-content-product .old-price {
+    font-size: 15px;
+    text-decoration: line-through;
+    margin-right: 20px;
+}
+.detail-product-page .detail-content-product .sale-percent {
+    background-color: #CC0033;
+    width: 70px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.detail-product-page .detail-content-product .price::after,
+.detail-product-page .detail-content-product .old-price::after {
+    content: " đ";
+}
+.detail-product-page .detail-content-product .custom-add-cart svg{
+    margin-right: 15px ;
+}
+.detail-product-page .detail-content-product .custom-add-cart{
+    color: #CC0033 !important;
+    border: 2px solid #CC0033;
+    font-weight: bold;
+}
+.detail-product-page .detail-content-product .custom-add-cart:hover{
+    color: #ffffff !important;
+    background-color: #CC0033;
+    border: 2px solid #CC0033;
+}
+.detail-product-page .detail-content-product .custom-buy-now{
+    color: #ffffff !important;
+    border: 2px solid #CC0033;
+    font-weight: bold;
+    background-color: #CC0033;
+}
+.detail-product-page .detail-content-product .custom-buy-now:hover{
+    color: #ffffff !important;
+    background-color: #FF0033;
+    border: 2px solid #FF0033;
+}
+.detail-product-page .detail-content-product .title-quantity{
+    font-weight: 700;
+    font-size: 17px;
+    padding-top: 15px !important;
+}
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.buttons_added input[type="text"]{
+    width: 50px;
+    outline: none;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#ffffff;
+    color: #000000;
+    height:40px;
+    width:40px;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+    font-weight: bold;
+}
+.is-form:hover{
+    background-color: #000000;
+    color: #ffffff
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.input-qty {
+    background-color:#fff;
+    height:40px;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+    font-size: 14px;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    margin:0;
+}
+.detail-product-page .description .title-description{
+    color: #000000;
+    border-bottom: 3px solid #CC0033;
+    padding: 0;
+    padding-bottom: 10px;
+    font-size: 27px;
+}
+.detail-product-page .suggestion .title-suggestion{
+    color: #000000;
+    border-bottom: 3px solid #CC0033;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 27px;
+}
 @media only screen AND (max-width: 655px){
     .see-more{
         background: white;
