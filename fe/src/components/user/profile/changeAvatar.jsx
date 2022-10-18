@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Avatar from "react-avatar-edit";
+import Avatar from 'react-avatar-edit';
 
 
 const ChangeAvatar = props => {
