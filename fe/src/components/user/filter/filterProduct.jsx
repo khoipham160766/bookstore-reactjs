@@ -4,10 +4,8 @@ import "./style.css";
 const FilterProduct = () =>  {
     return(
         <Fragment>
+            <h3 className="title-filter-product">Lọc sản phẩm</h3>
             <div className="border rounded shadow-sm filter-product">
-                <div className="title-filter-product">
-                    <h1>LỌC SẢN PHẨM</h1>
-                </div>
                 <ul className="list-group list-group-flush rounded list-filter">
                     <li className="list-group-item">
                         <h5 className="mt-1 mb-1">Loại sách</h5>

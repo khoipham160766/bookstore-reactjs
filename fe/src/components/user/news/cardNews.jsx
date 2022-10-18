@@ -22,7 +22,7 @@ const CardNews = () => {
                                     15-10-2022
                                 </small>
                             </p>
-                            <Link className="style-button-blog">XEM TIẾP</Link>
+                            <Link to="/news/detail" className="style-button-blog">XEM TIẾP</Link>
                         </div>
                     </div>
                 </div>

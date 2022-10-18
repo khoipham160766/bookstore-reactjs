@@ -5,6 +5,7 @@ import { faSearch} from "@fortawesome/free-solid-svg-icons";
 const SortProduct = () => {
     return(
         <Fragment>
+            <h3 className="title-sort-product">Sản phẩm</h3>
             <div className="row mb-3 sort-product">
                 <div className="col-lg-3 d-none d-lg-block">
                     <select className="form-select" aria-label="sort">

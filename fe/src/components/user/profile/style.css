@@ -1,0 +1,115 @@
+.profile-user-page{
+    width: 100%;
+}
+.profile-user-page .profile-avatar{
+    margin: 40px 0 ;
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    border-left: 1px solid rgba(0, 0, 0, .05);
+    text-align: center;
+}
+.profile-user-page .profile-avatar .style-avatar{
+    border-radius: 50%;
+    width: 55%;
+    float: left;
+    margin-left: 22.5%;
+}
+.profile-user-page .profile-avatar .change-avatar{
+    float: left;
+    width: 55%;
+    height: 40px;
+    font-size: 14px;
+    margin-left: 22.5%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+.profile-user-page .profile-avatar .change-avatar:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+.profile-user-page .profile-avatar span{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top:10px;
+    font-size: 13px;
+    color: #888888;
+}
+.profile-user-page .profile-user h3{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+    text-align: center;
+}
+.profile-user-page .profile-user table{
+    width: 100%;
+    float: left;
+}
+.profile-user-page .profile-user tr{
+    border-bottom: 1px solid #DDDDDD;
+}
+.profile-user-page .profile-user table th{
+    width: 30%;
+    font-size: 15px;
+    padding: 18px;
+    font-weight: bold;
+}
+.profile-user-page .profile-user table td{
+    float: left;
+    font-size: 13px;
+    padding: 18px;
+    width: 70%;
+}
+.profile-user-page .profile-user .profile-user-button{
+    width: 90%;
+    margin-left: 5% ;
+}
+.profile-user-page .profile-user .profile-user-button button{
+    margin: 15px auto 0 auto;
+    min-width: 180px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+.profile-user-page .profile-user .profile-user-button button:hover{
+    background-color: #000000;
+    color: #ffffff;
+
+}
+/* edit form */
+.style-title-edit-profile{
+    width: 100%;
+    text-align: center;
+    font-weight: 700 !important;
+}
+
+.modal-header{
+    border-bottom: 1px solid #b1acad !important ;
+}
+.modal-footer{
+    border-top:  1px solid #b1acad !important ;
+}
+.modal-edit-profile .input-box-register,
+.form-change-password .input-box-register{
+    width: 100% !important;
+}
+.form-change-password .input-box-register input{
+    width: 88% !important;
+}
+.form-change-password .input-box-register svg{
+    margin-left: 17px !important;
+    cursor: pointer;
+}
+.form-change-password .input-box-register:hover svg{
+    color: #cc0033 !important;
+}
+/* change avatar */
+.style-change-avatar{
+    margin-left: auto;
+    margin-right: auto;
+}

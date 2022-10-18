@@ -1,0 +1,165 @@
+.order-page .title-order-page{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
+/* style order page */
+.order-page .product-order-card{
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+    background-color: #ffffff;
+    border: 2px solid #c6c2c3;
+    border-radius: 5px;
+}
+.order-page .product-order-card .top{
+    float: left;
+    background-color: #ffffff;
+    color: #00CC33;
+    padding-bottom: 5px ;
+    width: 94%;
+    margin-left: 3%;
+    border-bottom: 2px solid rgba(0, 0, 0, .05);
+}
+.order-page .product-order-card .top i{
+    float: left;
+    padding: 15px;
+    padding-left: 0;
+}
+.order-page .product-order-card .top p{
+    float: left;
+    padding: 0;
+    margin: 0;
+    padding-top: 13px;
+    font-size: 13px;
+    margin-left: -3px;
+}
+.order-page .product-order-card .top span{
+    float: right;
+    color: #999999;
+    font-size: 13px;
+    margin: 14px 10px 0 0;
+}
+.order-page .product-order-card .mid{
+    float: left;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+.order-page .mid .mid-product-card{
+    float: left;
+    width: 100%;
+}
+.order-page .mid .mid-product-card img{
+    float: left;
+    margin: 10px 0 0 25px;
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+.order-page .mid .mid-product-card .info-product-card{
+    float: left;
+    width: 60%;
+    margin-left: 1%;
+}
+.order-page .info-product-card b{
+    width: 100%;
+    float: left;
+    text-transform: capitalize;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.order-page .info-product-card span{
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    font-weight: lighter;
+    color: #999999;
+    margin-top: 5px;
+}
+.order-page .info-product-card p{
+    float: left;
+    width: 100%;
+    font-size: 13px;
+}
+.order-page .mid .mid-product-card .price-product-card{
+    float: left;
+    width: 23%;
+    margin-right: 25px;
+}
+.order-page .price-product-card p{
+    float: right;
+    padding: 5px;
+    margin-top: 35px;
+    font-size: 15px;
+}
+.order-page .price-product-card p::after{
+    content:"₫";
+}
+.order-page .price-product-card .price-sale{
+    color: #ff0000;
+}
+.order-page .price-product-card .price-basic{
+    color:  #AAAAAA;
+    text-decoration: line-through;
+}
+.order-page .product-order-card .bottom{
+    float: left;
+    width: 100%;
+}
+.order-page .product-order-card .bottom .price-total{
+    float: left;
+    width: 100%;
+}
+.order-page .price-total p{
+    float: right;
+    padding: 0;
+    font-size: 22px;
+    color: #cc0033;
+    font-weight: 600;
+    margin: 6px 25px 0 10px;
+}
+.order-page .price-total p::after{
+    content:"₫";
+}
+.order-page .price-total span{
+    float: right;
+    font-size: 15px;
+    margin-top: 14px;
+    margin-left: -8px;
+}
+.order-page .price-total svg{
+    float: right;
+    color: #cc0033;
+    font-size: 25px;
+    padding: 15px;
+}
+.order-page .bottom .bottom-style-p{
+    font-size: 13px;
+    float: left;
+    color: #999999;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.order-page .bottom .bottom-style-p span{
+    text-decoration: underline;
+}
+.order-page .bottom .bottom-style-button{
+    float: right;
+    background-color: #cc0033;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 10px 25px 0 0;
+    text-transform: capitalize;
+    border: 2px solid #cc0033;
+    font-weight: 600;
+}
+.order-page .bottom .bottom-style-button:hover{
+    background-color: #ffffff;
+    color: #cc0033;
+}

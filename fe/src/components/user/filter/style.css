@@ -1,6 +1,9 @@
 /* filter products */
-.filter-product .title-filter-product{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.title-filter-product{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
 }
 .filter-product .btn-dark-custom{
     font-weight: bold !important;
@@ -8,16 +11,6 @@
 .filter-product .btn-dark-custom:hover{
     color: #000000 !important;
     background-color: #ffffff !important;
-}
-.filter-product .title-filter-product h1{
-    font-size: 22px;
-    text-align: left;
-    padding: 17px;
-    padding-bottom: 10px;
-    border-bottom: none;
-    margin-top: 23px;
-    font-weight: 700;
-    color: #ff0000;
 }
 .filter-product .list-filter h5{
     font-size: 17px;
@@ -34,6 +27,12 @@
 }
 
 /* sort product */
+.title-sort-product{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
 .sort-product .form-control::placeholder{
     font-style: normal !important;
     font-family: 'Roboto', sans-serif;

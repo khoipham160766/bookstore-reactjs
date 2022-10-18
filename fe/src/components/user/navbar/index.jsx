@@ -24,8 +24,8 @@ const Navigation = () => {
         setStateMenu(!stateMenu);
     }
     return(
-        <header>
-            <nav className="color-navbar navbar navbar-expand-lg navbar-light border-bottom ">
+        <header className="custom-header fixed-top">
+            <nav className="color-navbar navbar navbar-expand-lg navbar-light fixed">
                 <div className="container-fluid">
                     {/* logo */}
                     <Link className="navbar-brand" to="/" >

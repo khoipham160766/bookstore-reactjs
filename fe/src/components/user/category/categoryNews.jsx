@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { Link } from "react-router-dom";
 import "./style.css";
 
-const CategoryNew = () => {
+const CategoryNews = () => {
     return(
         <Fragment>
             <h2 className="title-category-news-page">Danh mục</h2>
@@ -38,4 +38,4 @@ const CategoryNew = () => {
     )
 }
 
-export default CategoryNew;
+export default CategoryNews;
