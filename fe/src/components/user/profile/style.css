@@ -2,7 +2,7 @@
     width: 100%;
 }
 .profile-user-page .profile-avatar{
-    margin: 40px 0 ;
+    margin: 40px auto ;
     float: left;
     border-right: 1px solid rgba(0, 0, 0, .05);
     border-left: 1px solid rgba(0, 0, 0, .05);
@@ -10,7 +10,8 @@
 }
 .profile-user-page .profile-avatar .style-avatar{
     border-radius: 50%;
-    width: 55%;
+    width: 170px;
+    height: 170px;
     float: left;
     margin-left: 22.5%;
 }

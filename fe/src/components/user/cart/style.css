@@ -185,6 +185,12 @@
     font-weight: 600;
     border: 2px solid #cc0033;
 }
+.cart-page .cart-bottom .buy-now a{
+    color: #ffffff;
+}
+.cart-page .cart-bottom .buy-now:hover a{
+    color: #cc0033;
+}
 .cart-page .cart-bottom .buy-now:hover{
     color: #cc0033;
     background-color: #ffffff;

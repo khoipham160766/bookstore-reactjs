@@ -44,7 +44,7 @@ const Cart = () => {
                                 <p className="price" id="price-cart-1">99.0000</p>
                             </div>
                             <div className="title-quantity">
-                                <div class="buttons_added mt-button">
+                                <div className="buttons_added mt-button">
                                     <input className="minus is-form quantity-style" type="button" value="-"/>
                                     <input aria-label="quantity" name="quantity" className="input-qty quantity-input" max="5" min="1" id="quantity-1" type="text" value="1" />
                                     <input className="plus is-form quantity-style" type="button" value="+"/>
@@ -60,10 +60,10 @@ const Cart = () => {
                     </div>
                 </div>
                 {/* cart bottom */}
-                <div class="cart-bottom">
-                    <p class="total-product">Số sản phẩm đã chọn: 0</p>
-                    <button class="buy-now" type="submit">Mua hàng</button>
-                    <p class="total-price">Tổng thanh toán: <span>0</span></p>
+                <div className="cart-bottom">
+                    <p className="total-product">Số sản phẩm đã chọn: 0</p>
+                    <button className="buy-now" type="submit"><Link to="/user/manage/payment">Mua hàng</Link></button>
+                    <p className="total-price">Tổng thanh toán: <span>0</span></p>
                 </div>
             </div>
         </Fragment>

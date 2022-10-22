@@ -82,10 +82,10 @@ const DetailProduct = () => {
                                 <span className="title-quantity">Số lượng</span>
                             </div>
                             <div className="col-8 col-sm-9">
-                                <div class="buttons_added">
-                                    <input class="minus is-form" type="button" value="-" onClick={minus_quantity}/>
+                                <div className="buttons_added">
+                                    <input className="minus is-form" type="button" value="-" onClick={minus_quantity}/>
                                     <input aria-label="quantity" name="quantity" class="input-qty" type="text" value={quantity}/>
-                                    <input class="plus is-form" type="button" value="+" onClick={plus_quantity}/>
+                                    <input className="plus is-form" type="button" value="+" onClick={plus_quantity}/>
                                 </div>
                             </div>
                         </div>

@@ -33,8 +33,8 @@ const LoginPage = () => {
                                             <button type="button" className="btn1 mt-3 mb-5">ĐĂNG NHẬP</button>
                                         </div>
                                     </div>
-                                    <Link to="/forgotpassword">Quên mật khẩu ?</Link>
-                                    <p>Bạn chưa có tài khoản ? Chọn <Link to="/register">đăng ký</Link></p>
+                                    <Link to="/user/forgotpassword">Quên mật khẩu ?</Link>
+                                    <p>Bạn chưa có tài khoản ? Chọn <Link to="/user/register">đăng ký</Link></p>
                                 </form>
                             </div>
                         </div>

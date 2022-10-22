@@ -17,12 +17,12 @@ const CardNews = () => {
                             <h5 className="card-title">Khuyến Mãi 50% Tri Ân</h5>
                             <p className="card-text mini-content-news">Khuyến mãi 50% cho mọi khách hàng đến với chúng tôi</p>
                             <p className="card-text">
-                                <small class="text-muted style-text-muted">
+                                <small className="text-muted style-text-muted">
                                     <FontAwesomeIcon icon={faCalendarDays}/>
                                     15-10-2022
                                 </small>
                             </p>
-                            <Link to="/news/detail" className="style-button-blog">XEM TIẾP</Link>
+                            <Link to="/user/news/detail" className="style-button-blog">XEM TIẾP</Link>
                         </div>
                     </div>
                 </div>

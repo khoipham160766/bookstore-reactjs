@@ -42,7 +42,7 @@ const RegisterPage = () => {
                             <input type="radio" name="gender" id="dot-1-register"/>
                             <input type="radio" name="gender" id="dot-2-register"/>
                             <input type="radio" name="gender" id="dot-3-register"/>
-                            <span class="gender-title">Giới tính</span>
+                            <span className="gender-title">Giới tính</span>
                             <div className="category-register">
                                 <label for="dot-1-register">
                                     <span className="dot-register one-register"></span>
@@ -62,7 +62,7 @@ const RegisterPage = () => {
                             <input type="submit" value="Đăng ký"/>
                         </div>
                         <div>
-                            <p className="style-p-form-register">Nếu bạn đã có tài khoản. Chọn <Link to="/login">đăng nhập</Link></p>
+                            <p className="style-p-form-register">Nếu bạn đã có tài khoản. Chọn <Link to="/user/login">đăng nhập</Link></p>
                         </div>
                     </form>
                 </div>

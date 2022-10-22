@@ -28,33 +28,33 @@ const Navigation = () => {
             <nav className="color-navbar navbar navbar-expand-lg navbar-light fixed">
                 <div className="container-fluid">
                     {/* logo */}
-                    <Link className="navbar-brand" to="/" >
+                    <Link className="navbar-brand" to="/user/home" >
                         <img src="../../images/logo.png" alt="logo" className="w-logo"/>
                     </Link>
                     {/* category  */}
                     <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? 'open' : '')}>
                         <ul className="navbar-nav me-auto mb-lg-0 custom-menu-nav">
                             <li className="nav-item div-search-tl-mb">
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" aria-label="Search"/>
-                                    <button class="btn btn-outline-dark" type="submit">
+                                <form className="d-flex" role="search">
+                                    <input className="form-control me-2" type="search" aria-label="Search"/>
+                                    <button className="btn btn-outline-dark" type="submit">
                                         <FontAwesomeIcon icon={faSearch}/>
                                     </button>
                                 </form>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/" className="nav-link" replace >
+                                <NavLink to="/user/home" className="nav-link" replace >
                                     TRANG CHỦ
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to="/recommend" className="nav-link" replace >
+                                <Link to="/user/recommend" className="nav-link" replace >
                                     GIỚI THIỆU
                                 </Link>
                             </li>
                             <li className="nav-item main-menu-product">
                                 <div className="log-mb-tl">
-                                    <Link to="/product" className="nav-link nav-link-custom" replace >
+                                    <Link to="/user/product" className="nav-link nav-link-custom" replace >
                                         SẢN PHẨM
                                     </Link>
                                     <FontAwesomeIcon icon={faChevronDown} className="carret-down" onClick={changeStateMenu}/>
@@ -67,17 +67,17 @@ const Navigation = () => {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link to="/news" className="nav-link" replace>
+                                <Link to="/user/news" className="nav-link" replace>
                                     TIN TỨC
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/contact" className="nav-link" replace >
+                                <Link to="/user/contact" className="nav-link" replace >
                                     LIÊN HỆ
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/manage/account" className="nav-link" replace >
+                                <Link to="/user/manage/account" className="nav-link" replace >
                                     QUẢN LÝ
                                 </Link>
                             </li>
@@ -98,16 +98,16 @@ const Navigation = () => {
                                 <FontAwesomeIcon icon={faUser} />
                                 {/* <div className={"div-log " + (openLog ? 'active-div-log': '')}> */}
                                     <ul className={"div-log " + (openLog ? 'active-div-log': '')}>
-                                        <li><Link to="/login">Đăng nhập</Link></li>
-                                        <li><Link to="/register">Đăng ký</Link></li>
+                                        <li><Link to="/user/login">Đăng nhập</Link></li>
+                                        <li><Link to="/user/register">Đăng ký</Link></li>
                                     </ul>
                                 {/* </div> */}
                             </li>
                             <li className="nav-item div-log-tl-mb">
-                                <Link to="/login">ĐĂNG NHẬP</Link>
+                                <Link to="/user/login">ĐĂNG NHẬP</Link>
                             </li>
                             <li className="nav-item div-log-tl-mb">
-                                <Link to="/register">ĐĂNG KÝ</Link>
+                                <Link to="/user/register">ĐĂNG KÝ</Link>
                             </li>
                         </ul>
                     </div>

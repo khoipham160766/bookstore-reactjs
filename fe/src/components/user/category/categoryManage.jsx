@@ -11,7 +11,7 @@ const CategoryManage = () => {
             <h2 className="title-category-manage-page">Quản lý tài khoản</h2>
             <Accordion alwaysOpen className="category-manage">
                 <Accordion.Item>
-                    <Link to="/manage/account">
+                    <Link to="/user/manage/account">
                         <h2 className="all-manage">
                             <FontAwesomeIcon icon={faUser} className="icon-manage icon-user"/>
                             Thông tin cá nhân
@@ -19,7 +19,7 @@ const CategoryManage = () => {
                     </Link>
                 </Accordion.Item>
                 <Accordion.Item>
-                    <Link to="/manage/cart">
+                    <Link to="/user/manage/cart">
                         <h2 className="all-manage">
                             <FontAwesomeIcon icon={faShoppingCart} className="icon-manage icon-shopping"/>
                             Giỏ hàng
@@ -29,25 +29,25 @@ const CategoryManage = () => {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>
                         <FontAwesomeIcon icon={faWallet} className="icon-manage icon-wallet"/>
-                        Đơn hàng
+                        Đơn mua
                     </Accordion.Header>
                     <Accordion.Body>
                         <ul>
                             <li>
                                 <FontAwesomeIcon icon={faSquare} className="square-all"/>
-                                <Link to="/manage/order">Tất cả đơn hàng</Link>
+                                <Link to="/user/manage/order">Tất cả đơn mua</Link>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faSquare} className="square-waiting"/>
-                                <Link>Đơn hàng chờ xác nhận</Link>
+                                <Link>Đơn mua chờ xác nhận</Link>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faSquare} className="square-delivering"/>
-                                <Link>Đơn hàng đang giao</Link>
+                                <Link>Đơn mua đang giao</Link>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faSquare} className="square-complete"/>
-                                <Link>Đơn hàng đã giao</Link>
+                                <Link>Đơn mua đã giao</Link>
                             </li>
                         </ul>
                     </Accordion.Body>
