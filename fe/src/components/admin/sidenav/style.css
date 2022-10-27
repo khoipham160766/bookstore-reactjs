@@ -1,0 +1,20 @@
+.drawer-sidenav{
+    margin-top: 65px !important;
+}
+.side-nav-data .admin-nav-link-custom div{
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+.side-nav-data .admin-nav-link-custom:hover div{
+    color: #cc0033 !important;
+}
+.side-nav-data .active-nav-link-custom div{
+    color: #cc0033 !important;
+}
+.side-nav-data .side-nav-data-button{
+    width: 100%;
+    text-transform: capitalize;
+}
+.side-nav-data .side-nav-data-button span{
+    font-size: 13px !important;
+    font-weight: bold !important;
+}

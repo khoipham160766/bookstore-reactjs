@@ -21,6 +21,15 @@ import DetailNews from './components/user/news/detailNews';
 
 // ui admin
 import LayoutAdmin from './layout/admin';
+import DashboardPage from './pages/admin/dashboardPage';
+import ManageBookPage from './pages/admin/manageBookPage';
+import ManageCategoryPage from './pages/admin/manageCategoryPage';
+import ManageCustomerPage from './pages/admin/manageCusomerPage';
+import ManageEmployeePage from './pages/admin/manageEmployeePage';
+import ManageFeedBackPage from './pages/admin/manageFeedbackPage';
+import ManageImportPage from './pages/admin/manageImportPage';
+import ManageNewsPage from './pages/admin/manageNewsPage';
+import ManageOrderPage from './pages/admin/manageOrderPage';
 // end ui admin
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -56,7 +65,17 @@ function App() {
 
             {/* router admin */}
             <Route path='/admin' element={<LayoutAdmin/>}>
-                
+                <Route exact path="dashboard" element={<DashboardPage/>}/>
+                <Route path="books" element={<ManageBookPage/>}/>
+                <Route path="categories" element={<ManageCategoryPage/>}/>
+                <Route path="customers" element={<ManageCustomerPage/>}/>
+                <Route path="employees" element={<ManageEmployeePage/>}/>
+                <Route path="news" element={<ManageNewsPage/>}/>
+                <Route path="orders" element={<ManageOrderPage/>}/>
+                <Route path="imports" element={<ManageImportPage/>}/>
+                <Route path="feedback" element={<ManageFeedBackPage/>}/>
+                {/* <Route path="chart" element={<ChartPage/>}/> */}
+                <Route index element={<DashboardPage/>} />
             </Route>
             {/* end router admin */}
         </Routes>

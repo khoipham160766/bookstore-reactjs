@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import "./style.css";
 
-const TopBar = () => {
+const ManageBookPage = () => {
     return(
         <Fragment>
-            topbar
+            manage book
         </Fragment>
     )
 }
 
-export default TopBar;
+export default ManageBookPage;
