@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 const EditProfile = props => {
     return(
         <Fragment>
-            <Modal show={props.edit_user} onHide={props.close_model}>
+            <Modal show={props.edit_user} onHide={props.close_model} className="form-manage-edit-user">
                 <Modal.Header closeButton>
                     <Modal.Title className="style-title-edit-profile">Thay đổi thông tin</Modal.Title>
                 </Modal.Header>

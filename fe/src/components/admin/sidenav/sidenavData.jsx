@@ -63,7 +63,7 @@ const SidenavData = props => {
         {
             icon:<EqualizerIcon/>,
             label: "Thống kê",
-            link: "/chart"
+            link: "/statistical"
         },
     ]
     return(
@@ -72,7 +72,7 @@ const SidenavData = props => {
                 {
                     listItemData.map((item,index)=>(
                         <Button key={index} className="side-nav-data-button" onClick={props.handleDrawerClose}>
-                            <ListItem exact component={NavLink} to={`/admin${item.link}`} className="admin-nav-link-custom" activeClassName="active-nav-link-custom">
+                            <ListItem component={NavLink} to={`/admin${item.link}`} className="admin-nav-link-custom">
                                 <ListItemIcon>{item.icon}</ListItemIcon>
                                 <ListItemText>{item.label}</ListItemText>
                             </ListItem>

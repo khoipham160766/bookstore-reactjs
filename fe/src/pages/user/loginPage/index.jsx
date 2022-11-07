@@ -9,11 +9,11 @@ const LoginPage = () => {
                 <div className="container">
                     <div className="row style-row">
                         <div className="col-lg-5 style-div-img">
-                            <img src="./images/banner-login.png" className="img-fluid style-img" alt="" />
+                            <img src="../images/banner-login.png" className="img-fluid style-img" alt="" />
                         </div>
                         <div className="col-lg-7 px-5 pt-5">
                             <div>
-                                <img src="./images/logo-login.png" className="style-img-form-login" alt="" />
+                                <img src="../images/logo-login.png" className="style-img-form-login" alt="" />
                                 <h4 className="style-h4">Đăng nhập bằng tài khoản của bạn</h4>
                             </div>
                             <div>

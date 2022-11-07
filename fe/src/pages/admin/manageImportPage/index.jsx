@@ -4,7 +4,9 @@ import "./style.css";
 const ManageImportPage = () => {
     return(
         <Fragment>
-            import
+            <div className="image-updating">
+                <img src="../../images/page-not-complete.png" alt=""/>
+            </div>
         </Fragment>
     )
 }

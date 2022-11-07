@@ -1,11 +1,9 @@
 .main-wrapper{
-    padding-left: 270px !important;
-    padding-top: 10px !important;
-    height: 100vh;
-    background-color: #EEEEEE;
+    padding: 80px 12px 0 270px;
+    width: 1518px;
 }
 @media only screen AND (max-width: 896px){
     .main-wrapper{
-        padding: 10px 16px 0 16px !important;
+        padding: 75px 16px 0 16px !important;
     }
 }

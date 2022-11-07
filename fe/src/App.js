@@ -30,6 +30,9 @@ import ManageFeedBackPage from './pages/admin/manageFeedbackPage';
 import ManageImportPage from './pages/admin/manageImportPage';
 import ManageNewsPage from './pages/admin/manageNewsPage';
 import ManageOrderPage from './pages/admin/manageOrderPage';
+import CreatePageNews from './pages/admin/manageNewsPage/createPageNews';
+import EditPageNews from './pages/admin/manageNewsPage/editPageNews';
+import StatisticalPage from './pages/admin/statisticPage';
 // end ui admin
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -58,23 +61,25 @@ function App() {
                 </Route>
                 <Route index element={<HomePage/>} />
             </Route>
-            <Route path='/login' element={<LoginPage/>}/>
-            <Route path='/register' element={<RegisterPage/>}/>
+            <Route path='/user/login' element={<LoginPage/>}/>
+            <Route path='/user/register' element={<RegisterPage/>}/>
             <Route path='/forgotpassword' element={<ForgotPasswordPage/>}/>
             {/* end router user */}
 
             {/* router admin */}
             <Route path='/admin' element={<LayoutAdmin/>}>
-                <Route exact path="dashboard" element={<DashboardPage/>}/>
+                <Route path="dashboard" element={<DashboardPage/>}/>
                 <Route path="books" element={<ManageBookPage/>}/>
                 <Route path="categories" element={<ManageCategoryPage/>}/>
                 <Route path="customers" element={<ManageCustomerPage/>}/>
                 <Route path="employees" element={<ManageEmployeePage/>}/>
                 <Route path="news" element={<ManageNewsPage/>}/>
+                <Route path="news/create" element={<CreatePageNews/>} />
+                <Route path="news/edit" element={<EditPageNews/>} />
                 <Route path="orders" element={<ManageOrderPage/>}/>
                 <Route path="imports" element={<ManageImportPage/>}/>
                 <Route path="feedback" element={<ManageFeedBackPage/>}/>
-                {/* <Route path="chart" element={<ChartPage/>}/> */}
+                <Route path="statistical" element={<StatisticalPage/>}/>
                 <Route index element={<DashboardPage/>} />
             </Route>
             {/* end router admin */}

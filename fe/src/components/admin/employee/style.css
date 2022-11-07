@@ -1,0 +1,67 @@
+.header-manage-employee{
+    padding: 20px 0;
+    display: flex;
+}
+/* search box */
+.header-manage-employee .search-box{
+    width: 270px;
+    margin-left: 10px;
+}
+.header-manage-employee .employee-search-box{
+    width: 130px !important;
+}
+.header-manage-employee .search-box input{
+    font-size: 15px !important;
+    padding: 8px;
+}
+.header-manage-employee  .search-box input:focus{
+    box-shadow: none;
+    border: 1px solid #000000 !important;
+}
+.header-manage-employee  .search-box .employee-button-search{
+    border: 1px solid #000000 !important;
+    border-radius: 0 !important;
+}
+/* search date */
+.header-manage-employee  .search-date{
+    margin-left: 15px;
+}
+.header-manage-employee  .search-date input{
+    border: 1px solid #000000 !important;
+    border: 1px solid #ced4da !important;
+    padding: 7px;
+    border-radius: 5px;
+}
+.header-manage-employee  .search-date span{
+    margin: 0 9px;
+}
+/* cofirm search */
+.header-manage-employee  .button-cofirm-search-employee{
+    margin-left: 15px;
+}
+.header-manage-employee  .button-search-cofirm .button-cofirm-search-employee{
+    padding: 7px !important;
+    border: 2px solid #f81e1e;
+    width: 120px;
+    background-color: #f81e1e;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.header-manage-employee  .button-search-cofirm .button-cofirm-search-employee:hover{
+    color: #f81e1e;
+    background-color: #ffffff;
+}
+/* search status */
+.header-manage-employee .search-employee{
+    width: 170px;
+    margin-left: 20px;
+}
+.header-manage-employee .custom-select-employee{
+    height: 40px !important;
+    padding: 0 !important;
+}
+.header-manage-employee .search-employee label{
+    margin-top: -5px !important;
+    font-size: 15px !important;
+}

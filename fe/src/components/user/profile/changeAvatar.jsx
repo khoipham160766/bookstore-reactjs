@@ -7,7 +7,7 @@ import Avatar from 'react-avatar-edit';
 const ChangeAvatar = props => {
     return(
         <Fragment>
-            <Modal show={props.edit_user} onHide={props.close_model}>
+            <Modal show={props.edit_user} onHide={props.close_model} className="form-manage-change-avatar">
                 <Modal.Header closeButton>
                     <Modal.Title className="style-title-edit-profile">Thay đổi ảnh đại diện</Modal.Title>
                 </Modal.Header>

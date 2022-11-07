@@ -36,7 +36,7 @@ const ProfileUser = () => {
             <div className="row profile-user-page">
                 <div className="col-lg-4">
                     <div className="profile-avatar">
-                        <img className="style-avatar" src={storeImage !== ""?storeImage:"../images/avatar-nobody.jpg"} alt="avatar"/>
+                        <img className="style-avatar" src={storeImage !== ""?storeImage:"../../images/avatar-nobody.jpg"} alt="avatar"/>
                         <span>conga@gmail.com</span>
                         <button className="change-avatar" onClick={handleShowChangeAvatar}>đổi ảnh</button>
                     </div>

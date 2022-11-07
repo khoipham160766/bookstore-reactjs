@@ -14,7 +14,7 @@ const NavbarAdmin = props => {
     return(
         <Fragment>
             <Box sx={{ flexGrow: 1 }} className="navbar-admin-style">
-                <AppBar position="static" className="appbar-style">
+                <AppBar position="fixed" className="appbar-style">
                     <Toolbar>
                         {/* <Hidden mdDown>
                             <Paper>xlDown</Paper>

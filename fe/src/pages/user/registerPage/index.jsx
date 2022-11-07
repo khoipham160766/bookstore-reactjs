@@ -7,7 +7,7 @@ const RegisterPage = () => {
         <Fragment>
             <div className="container-register px-5">
                 <div>
-                    <Link to="/home"><img src="./images/logo-login.png" alt="" className="style-img-form-register"/></Link>
+                    <Link to="/home"><img src="../images/logo-login.png" alt="" className="style-img-form-register"/></Link>
                 </div>
                 <div className="title-register">Đăng ký</div>
                 <div className="content-register">
