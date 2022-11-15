@@ -15,7 +15,7 @@ class khach_hang extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_KH'=>$this->id,
+            'id'=>$this->id,
             'Ho_KH'=>$this->Ho_KH,
             'Ten_KH'=>$this->Ten_KH,
             'Dia_Chi'=>$this->Dia_Chi,

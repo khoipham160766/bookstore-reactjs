@@ -10,8 +10,9 @@ const HeaderManageCategory = () => {
     const [showModalAddCategory, setShowModalAddCategory] = useState(false);
 
     const handleShowModalAddCategory = () => setShowModalAddCategory(true);
-    const handleCloseModalAddCategory = () =>setShowModalAddCategory(false);
-
+    const handleCloseModalAddCategory = () =>{
+        setShowModalAddCategory(false);
+    }
     return(
         <Fragment>
             <div className="header-manage-category">
@@ -24,7 +25,7 @@ const HeaderManageCategory = () => {
                                     <FontAwesomeIcon icon={faSearch}/>
                                 </button>
                             </div>
-                            <input type="text" className="form-control"/>
+                            <input type="text" className="form-control" placeholder="Tên danh mục ..."/>
                         </div>
                     </form>
                 </div>

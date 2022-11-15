@@ -85,3 +85,9 @@
 .table-best-customer .Mui-selected{
     background-color: #ffffff !important;
 }
+.table-mui-grid .Mui-selected{
+    background-color: #ffffff !important;
+}
+.table-mui-grid .MuiDataGrid-selectedRowCount {
+    visibility: hidden !important;
+}

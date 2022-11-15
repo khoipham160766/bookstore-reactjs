@@ -16,7 +16,7 @@ const  BestSellBook = ()  =>{
        
       ];
   return (
-    <div style={{ height: 578, width: '612px', margin: 'auto' }} className="icon-table-best-sell-book">
+    <div style={{ width: '612px', margin: 'auto' }} className="icon-table-best-sell-book">
         <h5 className="title-best-customer">
             <FontAwesomeIcon icon={faBook} className="best-sell-book"/>Sách bán chạy
         </h5>
@@ -26,6 +26,7 @@ const  BestSellBook = ()  =>{
             pageSize={10}
             rowsPerPageOptions={[10]}
             className='table-best-customer'
+            autoHeight={true}
         />
     </div>
   );

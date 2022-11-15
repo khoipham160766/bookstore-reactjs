@@ -15,7 +15,7 @@ class don_hang extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_DH' => $this->id,
+            'id' => $this->id,
             'Ma_KH'=> $this->Ma_KH,
             'Ma_NV' => $this->Ma_NV,
             'Ho_Ten_KH' => $this->Ho_Ten_KH,

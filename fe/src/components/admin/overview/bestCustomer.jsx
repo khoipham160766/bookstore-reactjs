@@ -24,7 +24,7 @@ const  BestCustomer = ()  =>{
         { id: 10, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
       ];
   return (
-    <div style={{ height: 578, width: '612px', margin: 'auto', marginBottom: '50px' }} className="icon-table-best-customer">
+    <div style={{ width: '612px', margin: 'auto', marginBottom: '50px' }} className="icon-table-best-customer">
         <h5 className="title-best-customer">
             <FontAwesomeIcon icon={faCrown} className="crown-best-customer"/>Xếp hạng khách hàng tháng 11
         </h5>
@@ -34,6 +34,7 @@ const  BestCustomer = ()  =>{
             pageSize={10}
             rowsPerPageOptions={[10]}
             className='table-best-customer'
+            autoHeight={true}
         />
     </div>
   );

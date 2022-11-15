@@ -127,6 +127,17 @@
     color: #17b117 !important;
     background-color: #ffffff !important;
 }
+.custom-modal-add .button-cofirm-edit{
+    border-radius: 0 !important;
+    width: 160px !important;
+    border: 2px solid #17b117 !important;
+    background-color: #17b117 !important;
+    font-weight: 600 !important;
+}
+.custom-modal-add .button-cofirm-edit:hover{
+    color: #17b117 !important;
+    background-color: #ffffff !important;
+}
 .custom-modal-add .modal-dialog{
     max-width: 900px !important;
     z-index: 100 !important;

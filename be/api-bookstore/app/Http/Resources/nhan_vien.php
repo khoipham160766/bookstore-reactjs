@@ -15,7 +15,7 @@ class nhan_vien extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_NV' => $this->id,
+            'id' => $this->id,
             'Ho_NV' => $this->Ho_NV,
             'Ten_NV' => $this->Ten_NV,
             'Ngay_Sinh' => $this->Ngay_Sinh,

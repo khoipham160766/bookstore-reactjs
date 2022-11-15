@@ -46,3 +46,10 @@ Route::resource('news', tin_tuc_Controller::class);
 // feedback
 use App\Http\Controllers\phan_hoi_Controller;
 Route::resource('feedback', phan_hoi_Controller::class);
+
+// count
+use App\Http\Controllers\count_Controller;
+Route::get('count/product', [count_Controller::class, 'countProduct']);
+Route::get('count/customer', [count_Controller::class, 'countCustomer']);
+Route::get('count/ordercomplete', [count_Controller::class, 'countOrder']);
+Route::get('count/news', [count_Controller::class, 'countNews']);

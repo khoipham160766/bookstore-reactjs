@@ -13,6 +13,8 @@ class tin_tuc extends Model
         'Tieu_De',
         'Hinh_Chinh',
         'Ngay_Dang',
+        'Ma_DM',
+        'Loai_Tin_Tuc',
         'Noi_Dung'
     ];
 }

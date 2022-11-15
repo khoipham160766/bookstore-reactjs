@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\san_pham;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class danh_muc extends JsonResource
@@ -15,10 +16,11 @@ class danh_muc extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_DM'=>$this->id,
+            'id'=>$this->id,
             'Ten_DM'=>$this->Ten_DM,
             'Ngay_Dang'=>$this->created_at->format('d/m/Y'),
-            'Ngay_Cap_Nhat'=>$this->updated_at->format('d/m/Y')
+            'Ngay_Cap_Nhat'=>$this->updated_at->format('d/m/Y'),
+            'Tong_San_Pham' => $san_pham = san_pham::where('Danh_Muc','=',$this->id)->count()
         ];
     }
 }

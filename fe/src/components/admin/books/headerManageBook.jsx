@@ -7,35 +7,15 @@ import FormControl from '@mui/material/FormControl';
 import SearchDateRangerPickerBook from "./dateRangePickerBook";
 import Select from '@mui/material/Select';
 import Button from 'react-bootstrap/Button';
-import ModalAddBook from "./modalAddBook";
+import { Link } from "react-router-dom";
 import "./style.css";
 
-const HeaderManageBook = () => {
+const HeaderManageBook = props => {
     const [searchCategory, setSearchCategory] = useState('');
-    const [showModalAddBook, setShowModalAddBook] = useState(false);
-    const [imageBook, setImageBook] = useState("");
-
+    // function
     const handleSearchCategory = (event) => {
         setSearchCategory(event.target.value);
     };
-    
-    const handleShowModalAddBook = () => {
-        setShowModalAddBook(true);
-        setImageBook("");
-    }
-    const handleCloseModalAddBook = () => {
-        setShowModalAddBook(false);
-    }
-    const handleUploadImageBook = (e) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-            if(reader.readyState === 2){
-                setImageBook(reader.result);
-                console.log(reader.result);
-            }
-        }
-        reader.readAsDataURL(e.target.files[0]);
-    }
     return(
         <Fragment>
             <div className="header-manage-book">
@@ -48,7 +28,7 @@ const HeaderManageBook = () => {
                                     <FontAwesomeIcon icon={faSearch}/>
                                 </button>
                             </div>
-                            <input type="text" className="form-control"/>
+                            <input type="text" className="form-control" placeholder="Tên sách ..." onChange={props.handleSearchBook}/>
                         </div>
                     </form>
                 </div>
@@ -83,10 +63,11 @@ const HeaderManageBook = () => {
                 </div>
                 {/* add book */}
                 <div className="add-book">
-                    <Button className="button-add-book" onClick={handleShowModalAddBook}>
-                        Thêm Sách Mới
-                    </Button>
-                    <ModalAddBook showModalAddBook={showModalAddBook} handleCloseModalAddBook={handleCloseModalAddBook} handleUploadImageBook={handleUploadImageBook} imageBook={imageBook}/>
+                    <Link to="/admin/books/add">
+                        <Button className="button-add-book">
+                            Thêm Sách Mới
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </Fragment>

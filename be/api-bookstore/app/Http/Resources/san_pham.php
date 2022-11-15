@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
-
+// thêm model
+use App\Models\danh_muc;
+// thêm lệnh use resource
+use App\Http\Resources\danh_muc as danh_muc_resource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class san_pham extends JsonResource
@@ -15,14 +18,15 @@ class san_pham extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_Sach'=>$this->id,
+            'id'=>$this->id,
+            'Ten_SP'=>$this->Ten_SP,
             'NXB'=>$this->NXB,
             'Tac_Gia'=>$this->Tac_Gia,
             'Don_Gia'=>$this->Don_Gia,
             'So_Luong'=>$this->So_Luong,
             'Giam_Gia'=>$this->Giam_Gia,
             'Mo_Ta'=>$this->Mo_Ta,
-            'Danh_Muc'=>$this->Danh_Muc,
+            'Danh_Muc'=> new danh_muc_resource(danh_muc::find($this->Danh_Muc)),
             'Tinh_Trang'=>$this->Tinh_Trang,
             'Hinh_Anh'=>$this->Hinh_Anh,
             'created_at'=>$this->created_at->format('d/m/Y'),

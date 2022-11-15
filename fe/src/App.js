@@ -23,6 +23,8 @@ import DetailNews from './components/user/news/detailNews';
 import LayoutAdmin from './layout/admin';
 import DashboardPage from './pages/admin/dashboardPage';
 import ManageBookPage from './pages/admin/manageBookPage';
+import AddBookPage from './pages/admin/manageBookPage/addBookPage';
+import EditBookPage from './pages/admin/manageBookPage/editBookPage';
 import ManageCategoryPage from './pages/admin/manageCategoryPage';
 import ManageCustomerPage from './pages/admin/manageCusomerPage';
 import ManageEmployeePage from './pages/admin/manageEmployeePage';
@@ -70,6 +72,8 @@ function App() {
             <Route path='/admin' element={<LayoutAdmin/>}>
                 <Route path="dashboard" element={<DashboardPage/>}/>
                 <Route path="books" element={<ManageBookPage/>}/>
+                <Route path="books/add" element={<AddBookPage/>}/>
+                <Route path="books/edit/:idbook" element={<EditBookPage/>}/>
                 <Route path="categories" element={<ManageCategoryPage/>}/>
                 <Route path="customers" element={<ManageCustomerPage/>}/>
                 <Route path="employees" element={<ManageEmployeePage/>}/>

@@ -1,18 +1,16 @@
 import React, { Fragment } from "react";
 import { DataGrid } from '@mui/x-data-grid';
+import { categoryColumns } from "../table/columns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { Tooltip } from "antd";
 import "./style.css";
 
-const CategoryTable = () => {
+const CategoryTable = ({listcategory,loading}) => {  
     const edit_category_tooltip = () => <span>Sửa thông tin</span>
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 60 },
-        { field: 'typeName', headerName: 'Tên danh mục', width: 810},
-        { field: 'sum', headerName: 'Số lượng sản phẩm', width: 240, type: 'number'},
+    const actionColumns = [
         { 
-            field: '7', headerName: 'Sửa', width: 120, sortable: false,
+            field: '7', headerName: 'Sửa', width: 90, sortable: false,
             renderCell: (params) => {
                 return(
                     <Tooltip placement="bottom" title={edit_category_tooltip}>
@@ -23,22 +21,18 @@ const CategoryTable = () => {
                 )
             }
         }
-      ];
-      
-      const rows = [
-        { id: 1, typeName: 'Sách văn học', sum: '40' },
-        { id: 2, typeName: 'Sách tiếng anh' , sum: '50' },
-        { id: 3, typeName: 'Tiểu thuyết', sum: '50' },
-       
-      ];
+    ]    
     return(
         <Fragment>
-            <div style={{ height: 579, width: '1236px' }}>
+            <div style={{width: '1236px' }}>
                 <DataGrid
-                    rows={rows}
-                    columns={columns}
+                    rows={listcategory}
+                    columns={categoryColumns.concat(actionColumns)}
                     pageSize={9}
                     rowsPerPageOptions={[9]}
+                    getRowId={row => row.id}
+                    autoHeight={true}
+                    loading={loading}
                 />
             </div>
         </Fragment>

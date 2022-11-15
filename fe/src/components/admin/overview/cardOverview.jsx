@@ -13,11 +13,11 @@ const CardOverview = props => {
                             {props.label}
                         </Typography>
                         <Typography variant="h5" component="h6" className="dashboard-card-content-title">
-                            {props.content}
+                            {props.sum}
                         </Typography>
                     </CardContent>
                     <CardActions className={props.linebutton}>
-                        <Button size="small"><Link>CHI TIẾT</Link></Button>
+                        <Button size="small"><Link to={props.link}>CHI TIẾT</Link></Button>
                     </CardActions>
                 </Card>
             </Grid>
