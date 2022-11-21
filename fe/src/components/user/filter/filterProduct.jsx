@@ -1,7 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./style.css";
 
 const FilterProduct = () =>  {
+    const [listCategory, setListCategory] = useState([]);
+    
     return(
         <Fragment>
             <h3 className="title-filter-product">Lọc sản phẩm</h3>
@@ -63,11 +65,11 @@ const FilterProduct = () =>  {
                         <div className="d-grid d-block mb-3">
                             <div className="form-floating mb-2">
                                 <input type="text" className="form-control" placeholder="Min" value="100000"/>
-                                <label for="floatingInput">Giá nhỏ nhất</label>
+                                <label htmlFor="floatingInput">Giá nhỏ nhất</label>
                             </div>
                             <div className="form-floating mb-2">
                                 <input type="text" className="form-control" placeholder="Max" value="500000"/>
-                                <label for="floatingInput">Giá lớn nhất</label>
+                                <label htmlFor="floatingInput">Giá lớn nhất</label>
                             </div>
                             <button className="btn btn-dark btn-dark-custom">LỌC</button>
                         </div>
