@@ -18,18 +18,19 @@ class san_pham extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
+            'id'=>$this->STT,
+            'Ma_SP'=>$this->id,
             'Ten_SP'=>$this->Ten_SP,
             'NXB'=>$this->NXB,
             'Tac_Gia'=>$this->Tac_Gia,
-            'Don_Gia'=>$this->Don_Gia,
+            'Don_Gia'=> number_format($this->Don_Gia,0,'.','.'),
             'So_Luong'=>$this->So_Luong,
             'Giam_Gia'=>$this->Giam_Gia,
             'Mo_Ta'=>$this->Mo_Ta,
             'Danh_Muc'=> new danh_muc_resource(danh_muc::find($this->Danh_Muc)),
             'Tinh_Trang'=>$this->Tinh_Trang,
             'Hinh_Anh'=>$this->Hinh_Anh,
-            'created_at'=>$this->created_at->format('d/m/Y'),
+            'created_at'=>$this->created_at->format('Y-m-d'),
             'updated_at'=>$this->updated_at->format('d/m/Y')
         ];
     }

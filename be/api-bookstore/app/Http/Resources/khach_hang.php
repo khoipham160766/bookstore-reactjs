@@ -25,6 +25,7 @@ class khach_hang extends JsonResource
             'Mat_Khau'=>$this->Mat_Khau,
             'Avatar'=>$this->Avatar,
             'Tinh_Trang'=>$this->Tinh_Trang,
+            'Ngay_Tao'=>$this->Ngay_Tao,
             'created_at'=>$this->created_at->format('d/m/Y'),
             'updated_at'=>$this->updated_at->format('d/m/Y')
         ];

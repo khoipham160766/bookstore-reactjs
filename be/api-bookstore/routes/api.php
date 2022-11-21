@@ -53,3 +53,16 @@ Route::get('count/product', [count_Controller::class, 'countProduct']);
 Route::get('count/customer', [count_Controller::class, 'countCustomer']);
 Route::get('count/ordercomplete', [count_Controller::class, 'countOrder']);
 Route::get('count/news', [count_Controller::class, 'countNews']);
+
+//detail order
+use App\Http\Controllers\chi_tiet_don_hang_Controller;
+Route::resource('orderdetail', chi_tiet_don_hang_Controller::class);
+
+//dashboard
+use App\Http\Controllers\dashboard_Controller;
+route::get('bestbook',[dashboard_Controller::class,'bestBook']);
+route::get('bestbookindexuser',[dashboard_Controller::class,'bestBookIndexUser']);
+route::get('newbookindexuser',[dashboard_Controller::class,'newBookIndexUser']);
+route::get('bestcustomer',[dashboard_Controller::class,'bestCustomer']);
+route::get('allbook',[dashboard_Controller::class,'allBookIndexUser']);
+route::get('searchbookincategory/{id}',[dashboard_Controller::class,'searchBookInCategory']);

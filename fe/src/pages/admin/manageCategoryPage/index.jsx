@@ -8,6 +8,17 @@ import axios from "axios";
 
 const ManageCategoryPage = () => {
     const [listCategory, setListCategory] = useState([]);
+    const [searchListCategory, setSearchListCategory] = useState([]);
+    const [checkSearchListCategory, setCheckSearchListCategory] = useState(false);
+    // function
+    const handleSearchCategoryName = (e) => {
+        const arrCategory = [];
+        listCategory.map( category =>(
+            ((category.Ten_DM.toUpperCase()).includes(e.target.value.toUpperCase()))?arrCategory.push(category):null
+        ))
+        setSearchListCategory(arrCategory);
+        setCheckSearchListCategory(true);
+    }
     useEffect(()=>{
         const getListCategory = async() => {
             const response = await axios.get("http://localhost:8000/api/category");
@@ -19,8 +30,8 @@ const ManageCategoryPage = () => {
         <Fragment>
             <Box>
                 <HeaderContent subtitle="Manage Category" title="Blog OverView" />
-                <HeaderManageCategory />
-                <CategoryTable listcategory={listCategory} loading={!listCategory.length} />
+                <HeaderManageCategory handleSearchCategoryName={handleSearchCategoryName} />
+                <CategoryTable listcategory={(!checkSearchListCategory)?listCategory:searchListCategory} loading={!listCategory.length} />
             </Box>
         </Fragment>
     )

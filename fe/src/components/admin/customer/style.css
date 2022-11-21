@@ -8,7 +8,7 @@
     margin-left: 10px;
 }
 .header-manage-customer .customer-search-box{
-    width: 130px !important;
+    width: 200px !important;
 }
 .header-manage-customer .search-box input{
     font-size: 15px !important;
@@ -21,6 +21,9 @@
 .header-manage-customer  .search-box .custom-button-search{
     border: 1px solid #000000 !important;
     border-radius: 0 !important;
+}
+.header-manage-customer .input-search-customer {
+    padding: 7px !important;
 }
 /* search date */
 .header-manage-customer  .search-date{

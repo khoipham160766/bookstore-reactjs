@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SearchDateRangePickerNews from "./dateRangePickerNews";
 import "./style.css"
 
-const HeaderManageNews = () => {
+const HeaderManageNews = ({handleSearchInputNews,setSearchNewsForm, searchNewsForm, handleSearchNewsForm}) => {
 
     return(
         <Fragment>
@@ -19,17 +19,17 @@ const HeaderManageNews = () => {
                                     <FontAwesomeIcon icon={faSearch}/>
                                 </button>
                             </div>
-                            <input type="text" className="form-control" placeholder="Nhập tên bài viết..."/>
+                            <input type="text" className="form-control" placeholder="Nhập tên bài viết..." onChange={handleSearchInputNews}/>
                         </div>
                     </form>
                 </div>
                 {/* search date */}
                 <div className="search-date">
-                    <SearchDateRangePickerNews />
+                    <SearchDateRangePickerNews setSearchNewsForm={setSearchNewsForm} searchNewsForm={searchNewsForm}/>
                 </div>
                 {/* button search */}
                 <div className="button-search-cofirm">
-                    <button type="submit" className="button-cofirm-search-category">
+                    <button type="submit" className="button-cofirm-search-category" onClick={handleSearchNewsForm}>
                         Xác Nhận
                     </button>
                 </div>

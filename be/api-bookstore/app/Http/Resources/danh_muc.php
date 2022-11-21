@@ -16,7 +16,8 @@ class danh_muc extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
+            'id'=>$this->STT,
+            'Ma_DM'=>$this->id,
             'Ten_DM'=>$this->Ten_DM,
             'Ngay_Dang'=>$this->created_at->format('d/m/Y'),
             'Ngay_Cap_Nhat'=>$this->updated_at->format('d/m/Y'),

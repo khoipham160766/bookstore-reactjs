@@ -14,7 +14,7 @@ class danh_muc_Controller extends Controller
 
     public function index()
     {
-        $danh_muc = danh_muc::all();
+        $danh_muc = danh_muc::select(danh_muc::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'message' => "Danh sách danh mục",

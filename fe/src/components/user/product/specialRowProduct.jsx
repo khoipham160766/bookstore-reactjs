@@ -6,49 +6,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Spin } from 'antd';
 import "./style.css";
 
-const SpecialRowProduct = props => {
+const SpecialRowProduct = ({title_data, breakpoints_data, listbook}) => {
     return(
         <Fragment>
             <section className="featured best-sale">
-                <h1 className="heading"><span>{props.title_data}</span></h1>
+                <h1 className="heading"><span>{title_data}</span></h1>
                 <Swiper
                     modules={[Navigation, A11y]}
-                    breakpoints={props.breakpoints_data}
+                    breakpoints={breakpoints_data}
                     navigation
                     pagination={{ clickable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                     className="style-swiper"
                 >
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
+                    {
+                        (listbook.length)?
+                        listbook.map((book, index) =>(
+                            <SwiperSlide key={index}>
+                                <ProductCard databook={book}/>
+                            </SwiperSlide>
+                        ))
+                        :<Spin />
+                    }
                 </Swiper>
             </section>
         </Fragment>

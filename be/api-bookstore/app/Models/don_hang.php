@@ -16,6 +16,7 @@ class don_hang extends Model
         'SDT',
         'Tong_Tien',
         'Ma_KM',
+        'Tien_KM',
         'Thanh_Tien',
         'Trang_Thai'
     ];

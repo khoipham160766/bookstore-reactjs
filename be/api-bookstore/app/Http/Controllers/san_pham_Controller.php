@@ -14,7 +14,7 @@ class san_pham_Controller extends Controller
 {
     public function index()
     {
-        $san_pham = san_pham::all();
+        $san_pham = san_pham::select(san_pham::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'data' => san_pham_resource::collection($san_pham)
@@ -32,7 +32,6 @@ class san_pham_Controller extends Controller
             'Don_Gia' => 'required',
             'So_Luong' => 'required', 
             'Giam_Gia' => 'required',
-            'Mo_Ta' => 'required', 
             'Danh_Muc' => 'required',
             'Tinh_Trang' => 'required',
             'Hinh_Anh' => 'required',

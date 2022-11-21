@@ -14,7 +14,7 @@ class phan_hoi_Controller extends Controller
 {
     public function index()
     {
-        $phan_hoi = phan_hoi::all();
+        $phan_hoi = phan_hoi::select(phan_hoi::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'data' => phan_hoi_resource::collection($phan_hoi)

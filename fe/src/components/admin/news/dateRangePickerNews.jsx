@@ -2,13 +2,17 @@ import React, { Fragment } from "react";
 import { Box } from "@mui/material";
 import "./style.css";
 
-const SearchDateRangePickerNews = () => {
+const SearchDateRangePickerNews = ({setSearchNewsForm, searchNewsForm}) => {
+    const handleSearchDateNews = (e) => {
+        const {name, value} = e.target;
+        setSearchNewsForm({...searchNewsForm, [name]: value});
+    }
     return(
         <Fragment>
             <Box width="350px">
-                <input type="date" name="date-from-news"/>
+            <input type="date" onChange={handleSearchDateNews} name="Bat_Dau"/>
                 <span>đến</span>
-                <input type="date" name="date-to-news"/>
+                <input type="date" onChange={handleSearchDateNews} name="Ket_Thuc"/>
             </Box>
         </Fragment>
     )

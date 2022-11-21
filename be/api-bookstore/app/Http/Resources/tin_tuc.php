@@ -18,12 +18,13 @@ class tin_tuc extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
+            'id'=>$this->STT,
+            'Ma_TT'=>$this->id,
             'Ma_NV'=>$this->Ma_NV,
             'Tieu_De'=>$this->Tieu_De,
             'Hinh_Chinh'=>$this->Hinh_Chinh,
             'Loai_Tin_Tuc'=>$this->Loai_Tin_Tuc,
-            'Danh_Muc'=>new danh_muc_resource(danh_muc::find($this->Ma_DM)),
+            'Ma_DM'=>new danh_muc_resource(danh_muc::find($this->Ma_DM)),
             'Ngay_Dang'=>$this->Ngay_Dang,
             'Noi_Dung'=>$this->Noi_Dung,
             'created_at'=>$this->created_at->format('d/m/Y'),

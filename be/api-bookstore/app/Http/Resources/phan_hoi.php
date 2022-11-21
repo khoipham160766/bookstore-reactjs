@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
-
+// thêm model
+use App\Models\khach_hang;
+// thêm lệnh use resource
+use App\Http\Resources\khach_hang as khach_hang_resource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class phan_hoi extends JsonResource
@@ -15,11 +18,12 @@ class phan_hoi extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'=>$this->STT,
             'Ma_PH'=>$this->id,
-            'Ma_KH'=>$this->Ma_KH,
+            'Ma_KH'=>new khach_hang_resource(khach_hang::find($this->Ma_KH)),
             'Noi_Dung'=>$this->Noi_Dung,
-            'Phan_Hoi'=>$this->Phan_Hoi,
-            'created_at' => $this->created_at->format('d/m/Y'),
+            'Email' => $this->Email,
+            'created_at' => $this->created_at->format('Y-m-d'),
             'updated_at' => $this->updated_at->format('d/m/Y')
         ];
     }

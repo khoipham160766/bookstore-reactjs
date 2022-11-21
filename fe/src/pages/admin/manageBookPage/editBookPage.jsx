@@ -3,11 +3,15 @@ import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { Box } from "@mui/material";
-import { handleEditBook } from "../../../components/admin/handle/handle";
+import HandleModal from "../../../components/admin/handle/modal";
+import { useNavigate } from "react-router-dom";
+import ButtonReturn from "../../../components/admin/handle/buttonReturn";
 import axios from "axios";
+import swal from 'sweetalert';
 import "./style.css";
 
 const EditBookPage = () => {
+    const navigate= useNavigate();
     const defaultInfo = {
         'id': '' ,
         'Danh_Muc': {
@@ -27,6 +31,11 @@ const EditBookPage = () => {
     const [selectModalAddBook, setSelectModalAddBook] = useState([]);
     const [infoBook, setInfoBook] = useState(defaultInfo);
     const [imageBook, setImageBook] = useState("");
+    const [showModalCancelEditBook, setShowModalCancelEditBook] = useState(false);
+    const [imageUpload, setImageUpload] = useState("");
+    //function
+    const handleCloseModalEditBook = () => setShowModalCancelEditBook(false);
+    const handleShowModalEditBook = () => setShowModalCancelEditBook(true);
     // axios
     useEffect(()=>{
         const getSelectModalAddBook = async() => {
@@ -40,7 +49,6 @@ const EditBookPage = () => {
         }
         getInfoBook();
     },[idbook]);
-    console.log(infoBook);
     // function
     const handleInputChangeBook = e => {
         const {name, value} = e.target;
@@ -57,9 +65,45 @@ const EditBookPage = () => {
         }
         reader.readAsDataURL(e.target.files[0]);
         setInfoBook({...infoBook, 'Hinh_Anh': e.target.files[0].name })
+        setImageUpload(e.target.files[0]);
+    }
+    // CRUD
+    const axiosEditBook = async(databook) => {
+        databook = {...databook, 'Danh_Muc': (!(databook.Danh_Muc.Ma_DM)?databook.Danh_Muc:databook.Danh_Muc.Ma_DM),'Don_Gia': databook.Don_Gia.replace('.','')};
+        const id = databook.Ma_SP;
+        delete databook.id;
+        delete databook.created_at;
+        delete databook.updated_at;
+        const response = await axios.put(`http://localhost:8000/api/product/${id}`, databook);
+        if(response.data.status === "success"){
+            swal({
+                title: "Sửa thành công",
+                text: "Nhấn OK để xác nhận",
+                icon: "success",
+                button: "OK",
+              }).then((value)=> navigate('/admin/books'));
+        }
+    }
+    const handleEditBook = (databook) => {
+        const data = new FormData();
+        data.append("file",imageUpload);
+        data.append("upload_preset","imagesbookstore");
+        fetch("https://api.cloudinary.com/v1_1/dgkrtexdv/image/upload",{
+            method: "post",
+            body: data,
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+             databook.Hinh_Anh = data.secure_url;
+             axiosEditBook(databook);
+          
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
     return(
         <Fragment>
+            <ButtonReturn link="/admin/books" />
             <Box className="create-page-news">
                 <div className="title-create-page-news">
                     <h3>Thông tin sách có mã là {idbook}</h3>
@@ -88,10 +132,10 @@ const EditBookPage = () => {
                         </div>
                         <div className="input-box-info">
                             <span className="details-info">Danh mục</span>
-                            <select className="form-select" value={infoBook.Danh_Muc.id} onChange={handleInputChangeBook} name="Danh_Muc" >
+                            <select className="form-select" value={infoBook.Danh_Muc.Ma_DM} onChange={handleInputChangeBook} name="Danh_Muc" >
                                 {
                                     selectModalAddBook.map((option,index)=>(
-                                        <option value={option.id} key={index}>{option.Ten_DM}</option>
+                                        <option value={option.Ma_DM} key={index}>{option.Ten_DM}</option>
                                     ))
                                 }
                             </select>
@@ -115,11 +159,18 @@ const EditBookPage = () => {
                         </div>
                         <div className="btn-cofirm-create-news">
                             <button className="btn-create" onClick={()=>handleEditBook(infoBook)}>Xác nhận sửa</button>
-                            <button className="btn-cancel">Hủy</button>
+                            <button className="btn-cancel" onClick={handleShowModalEditBook}>Hủy</button>
                         </div>
                     </div>
                 </div>
             </Box>
+            <HandleModal 
+                show={showModalCancelEditBook} 
+                handleClose={handleCloseModalEditBook} 
+                content="Xác nhận hủy sửa sách"
+                link="/admin/books"
+                title="Hủy sửa"
+            />
         </Fragment>
     )
 }

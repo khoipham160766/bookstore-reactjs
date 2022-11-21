@@ -35,6 +35,13 @@
 .header-manage-employee  .search-date span{
     margin: 0 9px;
 }
+.header-manage-employee .input-search-employee{
+    padding: 7px !important;
+}
+.header-manage-employee .div-icon-search-employee{
+    border: 1px solid #000000 !important;
+    border-radius: 0;
+}
 /* cofirm search */
 .header-manage-employee  .button-cofirm-search-employee{
     margin-left: 15px;

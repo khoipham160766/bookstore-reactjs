@@ -15,7 +15,7 @@ class phan_quyen extends JsonResource
     public function toArray($request)
     {
         return [
-            'Ma_Quyen' => $this->id,
+            'id' => $this->id,
             'Ten_Quyen' => $this->Ten_Quyen,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y')

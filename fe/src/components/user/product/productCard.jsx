@@ -5,25 +5,31 @@ import { faSearch, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Tooltip } from "antd";
 import "./style.css";
 
-const ProductCard = props => {
+const ProductCard = ({databook}) => {
     return(
         <Fragment>
             <div className="card-product">
-                <div className="sale-percent">
-                    <span>25%</span>
-                </div>
+                {
+                    (databook.TT_SP.Giam_Gia !== 0)?
+                    <div className="sale-percent">
+                        <span>{databook.TT_SP.Giam_Gia}</span>
+                    </div>
+                    :
+                    <div></div>
+                }
+               
                 <Link to="/user/detail">
                     <div className="image">
-                        <img src="../../images/book-1.jpg" alt=""/>
+                        <img src={databook.TT_SP.Hinh_Anh} alt=""/>
                     </div>
                 </Link>
                 <div className="content">
                     <h2 className="product-name">
-                        Sách văn học thời kì trung đại đến hiện đại
+                        {databook.TT_SP.Ten_SP}
                     </h2>
                     <div className="product-price">
-                        <span className="new-price">65.000</span>
-                        <span className="old-price">90.000</span>
+                        <span className="new-price">{databook.TT_SP.Don_Gia}</span>
+                        <span className="old-price">{databook.TT_SP.Don_Gia}</span>
                     </div>
                     <div className="box-hover">
                         <Tooltip placement="bottom" title="Thêm giỏ hàng">

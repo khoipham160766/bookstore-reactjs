@@ -14,7 +14,7 @@ class tin_tuc_Controller extends Controller
 {
     public function index()
     {
-        $tin_tuc = tin_tuc::all();
+        $tin_tuc = tin_tuc::select(tin_tuc::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'data' => tin_tuc_resource::collection($tin_tuc)
@@ -93,7 +93,7 @@ class tin_tuc_Controller extends Controller
             ];
             return response()->json($arr, 200);
         }
-        nhap_hang::destroy($id);
+        tin_tuc::destroy($id);
         $arr = [
             'status' => 'success',
             'message' =>'Tin tức đã được xóa',

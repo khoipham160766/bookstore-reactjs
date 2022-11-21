@@ -17,6 +17,7 @@ class khach_hang extends Model
         'Tai_Khoan',
         'Mat_Khau',
         'Avatar',
-        'Tinh_Trang'
+        'Tinh_Trang',
+        'Ngay_Tao'
     ];
 }

@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser , faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
+import axios from "axios";
 import "./style.css";
 
 const Navigation = () => {
@@ -10,7 +11,8 @@ const Navigation = () => {
     const [openLog, setOpenLog] = useState(false);
     const [openSearchBox, setOpenSearchBox] = useState(false);
     const [stateMenu, setStateMenu] = useState(false);
-
+    const [userCategory, setUserCategory] = useState([]);
+    //function
     const toggleDrawer = () => {
       setOpenedDrawer(!openedDrawer);
     }
@@ -23,6 +25,14 @@ const Navigation = () => {
     const changeStateMenu = () => {
         setStateMenu(!stateMenu);
     }
+    //axios
+    useEffect(()=>{
+        const getUserCategory = async() => {
+            const response = await axios.get("http://localhost:8000/api/category");
+            setUserCategory(response.data.data);
+        }
+        getUserCategory();
+    },[])
     return(
         <header className="custom-header fixed-top">
             <nav className="color-navbar navbar navbar-expand-lg navbar-light fixed">
@@ -54,16 +64,20 @@ const Navigation = () => {
                             </li>
                             <li className="nav-item main-menu-product">
                                 <div className="log-mb-tl">
-                                    <Link to="/user/product" className="nav-link nav-link-custom" replace >
+                                    <Link to="/user/book" className="nav-link nav-link-custom" replace >
                                         SẢN PHẨM
                                     </Link>
                                     <FontAwesomeIcon icon={faChevronDown} className="carret-down" onClick={changeStateMenu}/>
                                 </div>
                                
                                 <ul className={"div-sub-category " + (stateMenu ? 'openMenu' : '')}>
-                                    <li><Link to="/">SÁCH TIẾNG ANH</Link></li>
-                                    <li><Link to="/">SÁCH VĂN HỌC</Link></li>
-                                    <li><Link to="/">TIỂU THUYẾT</Link></li>
+                                    {
+                                        userCategory.map((category,index)=> (
+                                            <li key={index}>
+                                                <Link to={`/user/book/${category.Ten_DM}`}>{category.Ten_DM}</Link>
+                                            </li>
+                                        ))
+                                    }
                                 </ul>
                             </li>
                             <li className="nav-item">

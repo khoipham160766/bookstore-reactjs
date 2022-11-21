@@ -14,7 +14,7 @@ class don_hang_Controller extends Controller
 {
     public function index()
     {
-        $don_hang = don_hang::all();
+        $don_hang = don_hang::select(don_hang::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'data' => don_hang_resource::collection($don_hang)

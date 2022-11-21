@@ -3,13 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { Box } from "@mui/material";
 import axios from "axios";
-import { handleAddBook } from "../../../components/admin/handle/handle";
+import HandleModal from "../../../components/admin/handle/modal";
+import ButtonReturn from "../../../components/admin/handle/buttonReturn";
+import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 import "./style.css";
 
 const AddBookPage = () => {
+    const navigate= useNavigate();
     const [selectModalAddBook, setSelectModalAddBook] = useState([]);
-    const [infoBook, setInfoBook] = useState({'Hinh_Anh': 'avt','So_Luong': 0, 'Giam_Gia': 0, 'Tinh_Trang': 1, 'Danh_Muc': 1});
+    const [infoBook, setInfoBook] = useState({'Hinh_Anh': 'avt','So_Luong': 0, 'Giam_Gia': 0, 'Tinh_Trang': 1, 'Danh_Muc': 1, 'Mo_Ta': 'Không có'});
     const [imageBook, setImageBook] = useState("");
+    const [showModalCancelAddBook, setShowModalCancelAddBook] = useState(false);
+    const [imageUpload, setImageUpload] = useState("");
+    //function
+    const handleCloseModalAddBook = () => setShowModalCancelAddBook(false);
+    const handleShowModalAddBook = () => setShowModalCancelAddBook(true);
     // axios
     useEffect(()=>{
         const getSelectModalAddBook = async() => {
@@ -33,10 +42,42 @@ const AddBookPage = () => {
             }
         }
         reader.readAsDataURL(e.target.files[0]);
-        setInfoBook({...infoBook, 'Hinh_Anh': e.target.files[0].name })
+        setInfoBook({...infoBook, 'Hinh_Anh': e.target.files[0].name });
+        setImageUpload(e.target.files[0]);
+    }
+    // CRUD
+    const axiosAddBook = async(databook) => {
+        console.log("A")
+            const response =await axios.post("http://localhost:8000/api/product", databook);
+            if(response.data.status === "success"){
+                swal({
+                    title: "Thêm thành công",
+                    text: "Nhấn OK để xác nhận",
+                    icon: "success",
+                    button: "OK",
+                  }).then((value)=> navigate('/admin/books'));
+            }
+    }
+    const handleAddBook = (databook) => {
+        const data = new FormData();
+        data.append("file",imageUpload);
+        data.append("upload_preset","imagesbookstore");
+        fetch("https://api.cloudinary.com/v1_1/dgkrtexdv/image/upload",{
+            method: "post",
+            body: data,
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+             databook.Hinh_Anh = data.secure_url;
+            axiosAddBook(databook);
+          
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
     return(
         <Fragment>
+            <ButtonReturn link="/admin/books" />
             <Box className="create-page-news">
                 <div className="title-create-page-news">
                     <h3>Thêm sách mới</h3>
@@ -68,7 +109,7 @@ const AddBookPage = () => {
                             <select className="form-select" aria-label="Default select example" onChange={handleInputChangeBook} name="Danh_Muc" >
                                 {
                                     selectModalAddBook.map((option,index)=>(
-                                        <option value={option.id} key={index}>{option.Ten_DM}</option>
+                                        <option value={option.Ma_DM} key={index}>{option.Ten_DM}</option>
                                     ))
                                 }
                             </select>
@@ -91,12 +132,20 @@ const AddBookPage = () => {
                             </div>
                         </div>
                         <div className="btn-cofirm-create-news">
-                            <button className="btn-create" onClick={()=>{handleAddBook(infoBook)}}>Thêm</button>
-                            <button className="btn-cancel">Hủy</button>
+                            <button className="btn-create" onClick={()=> handleAddBook(infoBook)}>Thêm</button>
+                            {/* */}
+                            <button className="btn-cancel" onClick={handleShowModalAddBook}>Hủy</button>
                         </div>
                     </div>
                 </div>
             </Box>
+            <HandleModal 
+                show={showModalCancelAddBook} 
+                handleClose={handleCloseModalAddBook} 
+                content="Xác nhận hủy thêm sách"
+                link="/admin/books"
+                title="Hủy thêm"
+            />
         </Fragment>
     )
 }

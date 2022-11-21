@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./style.css";
 import SpecialRowProduct from "../../../components/user/product/specialRowProduct";
 import NormalRowProduct from "../../../components/user/product/normalRowProduct";
 import Slider from "../../../components/user/carousel";
+import axios from "axios";
 
 const HomePage = () => {
     const config_screen_swiper = {
@@ -27,12 +28,33 @@ const HomePage = () => {
             spaceBetween: 15,
         },
     }
+    const [listBookSeller, setListBookSeller] = useState([]);
+    const [listBookNew, setListBookNew] = useState([]);
+    const [listCategory, setListCategory] = useState([]);
+    //axios
+    useEffect(()=>{
+        const getListBookSeller = async() => {
+            const response = await axios.get("http://localhost:8000/api/bestbookindexuser");
+            setListBookSeller(response.data.data);
+        }
+        getListBookSeller();
+        const getListBookNew = async() => {
+            const response = await axios.get("http://localhost:8000/api/newbookindexuser");
+            setListBookNew(response.data.data);
+        }
+        getListBookNew();
+        const getListCategory = async() => {
+            const response = await axios.get("http://localhost:8000/api/category");
+            setListCategory(response.data.data);
+        }
+        getListCategory();
+    },[])
     return(
         <Fragment>
             <Slider/>
             <div className="container py-4 px-4 justify-content-center">
-                <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="BÁN CHẠY"/>
-                <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="MỚI RA MẮT"/>
+                <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="BÁN CHẠY" listbook={listBookSeller}/>
+                <SpecialRowProduct breakpoints_data={config_screen_swiper} title_data="MỚI RA MẮT" listbook={listBookNew}/>
 
                 <div className="mini-adv">
                     <div className="mini-adv-left">
@@ -42,10 +64,14 @@ const HomePage = () => {
                         <img src="../../images/mini-banner/mini-3.png" alt=""/>
                     </div>
                 </div>
-
-                <NormalRowProduct breakpoints_data={config_screen_swiper} title_data="VĂN HỌC"/>
+                {
+                    listCategory.map((category,index)=>(
+                        <NormalRowProduct breakpoints_data={config_screen_swiper} title_data={category.Ten_DM} key={index} idcategory={category.id} namecategory={category.Ten_DM}/>
+                    ))
+                }
+                {/* <NormalRowProduct breakpoints_data={config_screen_swiper} title_data="VĂN HỌC"/>
                 <NormalRowProduct breakpoints_data={config_screen_swiper} title_data="NGOẠI NGỮ"/>
-                <NormalRowProduct breakpoints_data={config_screen_swiper} title_data="TIỂU THUYẾT"/>
+                <NormalRowProduct breakpoints_data={config_screen_swiper} title_data="TIỂU THUYẾT"/> */}
             </div>
         </Fragment>
     )

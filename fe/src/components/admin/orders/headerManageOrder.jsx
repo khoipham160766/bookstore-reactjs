@@ -6,24 +6,29 @@ import SearchDateRangePickerOrder from "./dateReangePickerOrder";
 import Select from '@mui/material/Select';
 import "./style.css";
 
-const HeaderManageOrder = () => {
+const HeaderManageOrder = ({handleSearchIdOrder, handleSearchNameCustomer, setSearchOrderForm, searchOrderForm, handleSearchOrderForm}) => {
     const [searchStatusOrder, setSearchStatusOrder] = useState('');
 
     const handleSearchStatusOrder = (event) => {
         setSearchStatusOrder(event.target.value);
+        setSearchOrderForm({...searchOrderForm, 'Trang_Thai': event.target.value})
     };
+    const handleSearchOrderInputForm = (e) => {
+        const {name,value} = e.target;
+        setSearchOrderForm({...searchOrderForm, [name]: value})
+    }
     return(
         <Fragment>
             <div className="header-manage-customer">
                 {/* search input */}
                 <div className="search-box order-search-box">
                     <div className="input-group">
-                        <input type="text" className="form-control" placeholder="Mã hóa đơn..."/>
+                        <input type="text" className="form-control" placeholder="Mã hóa đơn..." onChange={handleSearchIdOrder}/>
                     </div>
                 </div>
                 <div className="search-box order-search-box">
                     <div className="input-group">
-                        <input type="text" className="form-control" placeholder="Mã khách hàng..."/>
+                        <input type="text" className="form-control" placeholder="Tên khách hàng..." onChange={handleSearchNameCustomer}/>
                     </div>
                 </div>
                 <div className="search-customer">
@@ -37,18 +42,22 @@ const HeaderManageOrder = () => {
                             onChange={handleSearchStatusOrder}
                             className="custom-select-customer"
                         >
-                            <MenuItem value={10}>Bị khóa</MenuItem>
-                            <MenuItem value={20}>Không bị khóa</MenuItem>
+                            <MenuItem value="Tất cả">Tất cả</MenuItem>
+                            <MenuItem value="Chờ xác nhận">Chờ xác nhận</MenuItem>
+                            <MenuItem value="Chuẩn bị hàng">Chuẩn bị hàng</MenuItem>
+                            <MenuItem value="Đang giao">Đang giao</MenuItem>
+                            <MenuItem value="Giao thành công">Giao thành công</MenuItem>
+                            <MenuItem value="Bị hủy">Bị hủy</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
                 {/* search date */}
                 <div className="search-date">
-                    <SearchDateRangePickerOrder />
+                    <SearchDateRangePickerOrder handleSearchOrderInputForm={handleSearchOrderInputForm}/>
                 </div>
                 {/* button search */}
                 <div className="button-search-cofirm">
-                    <button type="submit" className="button-cofirm-search-customer">
+                    <button type="submit" className="button-cofirm-search-customer" onClick={handleSearchOrderForm}>
                         Xác Nhận
                     </button>
                 </div>

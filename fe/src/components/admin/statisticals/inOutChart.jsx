@@ -1,4 +1,4 @@
-import React, { Fragment,useState } from "react";
+import React, { Fragment} from "react";
 import { Bar } from "react-chartjs-2";
 import { data } from "./data";
 import { Chart } from "chart.js/auto";

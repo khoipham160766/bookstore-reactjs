@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import { Box } from "@mui/material";
 import "./style.css";
 
-const SearchDateRangePickerOrder = () => {
+const SearchDateRangePickerOrder = ({handleSearchOrderInputForm}) => {
     return(
         <Fragment>
             <Box width="350px">
-                <input type="date" name="date-from-order"/>
+                <input type="date" onChange={handleSearchOrderInputForm} name="Bat_Dau"/>
                 <span>đến</span>
-                <input type="date" name="date-to-order"/>
+                <input type="date" onChange={handleSearchOrderInputForm} name="Ket_Thuc"/>
             </Box>
         </Fragment>
     )

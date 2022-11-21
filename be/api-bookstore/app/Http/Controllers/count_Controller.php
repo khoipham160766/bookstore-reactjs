@@ -29,7 +29,7 @@ class count_Controller extends Controller
         return response()->json($arr, 200);
     }
     public function countOrder(){
-        $don_hang = don_hang::where('Trang_Thai','=','Hoàn thành')->count();
+        $don_hang = don_hang::where('Trang_Thai','=','Giao thành công')->count();
         $arr = [
             'status' => 'success',
             'data'=> $don_hang

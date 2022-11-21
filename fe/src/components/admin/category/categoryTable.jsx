@@ -4,19 +4,22 @@ import { categoryColumns } from "../table/columns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { Tooltip } from "antd";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const CategoryTable = ({listcategory,loading}) => {  
     const edit_category_tooltip = () => <span>Sửa thông tin</span>
     const actionColumns = [
         { 
-            field: '7', headerName: 'Sửa', width: 90, sortable: false,
+            field: 'edit', headerName: 'Sửa', width: 90, sortable: false,
             renderCell: (params) => {
                 return(
                     <Tooltip placement="bottom" title={edit_category_tooltip}>
-                        <div className="icon-edit-book">
-                        <FontAwesomeIcon icon={faPenToSquare} />
-                        </div>
+                        <Link to={`/admin/categories/edit/${params.row.Ma_DM}`} className="icon-edit-book">
+                            <div >
+                                <FontAwesomeIcon icon={faPenToSquare} />
+                            </div>
+                        </Link>
                     </Tooltip>
                 )
             }
@@ -33,6 +36,7 @@ const CategoryTable = ({listcategory,loading}) => {
                     getRowId={row => row.id}
                     autoHeight={true}
                     loading={loading}
+                    className="table-mui-grid"
                 />
             </div>
         </Fragment>

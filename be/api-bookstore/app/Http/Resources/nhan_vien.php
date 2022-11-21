@@ -2,6 +2,10 @@
 
 namespace App\Http\Resources;
 
+// thêm model
+use App\Models\phan_quyen;
+// thêm lệnh use resource
+use App\Http\Resources\phan_quyen as phan_quyen_resource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class nhan_vien extends JsonResource
@@ -25,7 +29,7 @@ class nhan_vien extends JsonResource
             'Tai_Khoan' => $this->Tai_Khoan,
             'Mat_Khau' => $this->Mat_Khau,
             'Tinh_Trang' => $this->Tinh_Trang,
-            'Quyen' => $this->Quyen,
+            'Quyen' => new phan_quyen_resource(phan_quyen::find($this->Quyen)),
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y')
         ];

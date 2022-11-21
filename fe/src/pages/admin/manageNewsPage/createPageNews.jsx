@@ -1,16 +1,23 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
-import { handleAddNews } from "../../../components/admin/handle/handle";
 import JoditEditor from 'jodit-react';
+import HandleModal from "../../../components/admin/handle/modal";
+import ButtonReturn from "../../../components/admin/handle/buttonReturn";
 import "./style.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 const CreatePageNews = () => {
+    const navigate= useNavigate();
     const today = new Date();
     const editor = useRef(null);
     const [infoNews, setInfoNews] = useState({'Loai_Tin_Tuc': 'Khuyến Mãi', 'Ma_DM': 1,'Hinh_Chinh': 'abc'});
     const [selectType, setSelectType] = useState([]);
-
+    const [showModalCancelAddNews, setShowModalCancelAddNews] = useState(false);
+    //function
+    const handleCloseModalAddNews = () => setShowModalCancelAddNews(false);
+    const handleShowModalAddNews = () => setShowModalCancelAddNews(true);
     useEffect(()=>{
         const getSelectType = async() => {
             const response = await axios.get("http://localhost:8000/api/category");
@@ -26,9 +33,22 @@ const CreatePageNews = () => {
                     'Ma_NV': 1,
                     'Ngay_Dang': timeNow});
     } 
+    //CRUD
+    const handleAddNews = async(datanews) => {
+        const response = await axios.post("http://localhost:8000/api/news", datanews);
+        if(response.data.status === "success"){
+            swal({
+                title: "Thêm thành công",
+                text: "Nhấn OK để xác nhận",
+                icon: "success",
+                button: "OK",
+              }).then((value)=> navigate('/admin/news'));
+        }
+    }
     //console.log(infoNews);
     return(
         <Fragment>
+         <ButtonReturn link="/admin/news" />
             <Box className="create-page-news">
                 <div className="title-create-page-news">
                     <h3>Thêm bài viết</h3>
@@ -66,11 +86,18 @@ const CreatePageNews = () => {
                         </div>
                         <div className="btn-cofirm-create-news">
                             <button className="btn-create" onClick={() => {handleAddNews(infoNews)}}>Đăng bài viết</button>
-                            <button className="btn-cancel">Hủy</button>
+                            <button className="btn-cancel" onClick={handleShowModalAddNews}>Hủy</button>
                         </div>
                     </div>
                 </div>
             </Box>
+            <HandleModal 
+                show={showModalCancelAddNews} 
+                handleClose={handleCloseModalAddNews} 
+                content="Xác nhận hủy thêm bài viết"
+                link="/admin/news"
+                title="Hủy thêm"
+            />
         </Fragment>
     )
 }

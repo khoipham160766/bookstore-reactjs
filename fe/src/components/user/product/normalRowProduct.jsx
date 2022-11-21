@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ProductCard from "./productCard";
 import { Navigation, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,51 +8,43 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "./style.css";
+import axios from "axios";
 
-const NormalRowProduct = props => {
+const NormalRowProduct = ({title_data, breakpoints_data, idcategory, namecategory}) => {
+    const [listBook, setListBook] = useState([]);
+    useEffect(()=>{
+        console.log(idcategory)
+        // console.log(idcategory);
+        const getListBook = async() =>{
+            const response = await axios.get(`http://localhost:8000/api/searchbookincategory/${idcategory}`);
+            setListBook(response.data.data);
+        }
+        getListBook();
+    },[idcategory])
+    const slice = listBook.slice(0, 10);
     return(
         <Fragment>
             <section className="featured best-sale">
                 <div className="section-head">
-                    <h1 className="heading-normal"><span>{props.title_data}</span></h1>
-                    <Link className="see-more">Xem thêm</Link>
+                    <h1 className="heading-normal"><span>{title_data}</span></h1>
+                    <Link to={`/user/book/${namecategory}`}className="see-more">Xem thêm</Link>
                 </div>
                 <Swiper
                     modules={[Navigation, A11y, Autoplay]}
-                    breakpoints={props.breakpoints_data}
+                    breakpoints={breakpoints_data}
                     autoplay={true}
                     pagination={{ clickable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                     className="style-swiper"
                 >
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
+                     {
+                        (slice.length)?
+                        slice.map((book, index) =>(
+                            <SwiperSlide key={index}>
+                                <ProductCard databook={book}/>
+                            </SwiperSlide>
+                        ))
+                        :<div>Chưa có sản phẩm</div>
+                    }
                 </Swiper>
             </section>
         </Fragment>
