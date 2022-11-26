@@ -1,0 +1,10 @@
+.style-carousel{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-top: 20px;
+    z-index: 0;
+    position: relative;
+}
+.style-carousel .style-img{
+    height: 400px !important;
+}

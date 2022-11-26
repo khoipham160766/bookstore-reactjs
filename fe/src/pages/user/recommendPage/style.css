@@ -1,0 +1,33 @@
+.text-justify{
+    text-align: justify;
+}
+.recommend h1{
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 3px solid #ff0000;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.recommend{
+    font-size: 17px;
+    /* font-weight: 300; */
+}
+.recommend ul{
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.recommend img{
+    width: 80%;
+    margin: 12px 0 12px 0;
+    margin-left: 10%;
+}
+@media only screen AND (max-width: 769px){
+    .recommend img{
+        width: 100%;
+        margin: 12px 0 12px 0;
+        margin-left: 0;
+    }
+}

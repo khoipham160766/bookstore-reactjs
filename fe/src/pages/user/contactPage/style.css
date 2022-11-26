@@ -1,0 +1,107 @@
+.contact h1{
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 3px solid #ff0000;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.info-contact{
+    float: left;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    display: flex;
+}
+.info-contact h3{
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #BBBBBB;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+.info-contact-map {
+    width: 100%;
+    float: left;
+    justify-content: center;
+}
+.info-contact .feedback{
+    float: left;
+    width: 60%;
+}
+.feedback p{
+    float: left;
+    font-size: 13px;
+    width: 100%;
+}
+.feedback .style-form-group{
+    padding-bottom: 10px;
+}
+.style-form-group input,textarea{
+    font-size: 13px !important;
+    padding: 10px;
+}
+.style-form-group textarea::placeholder{
+    font-style: normal !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+.style-form-group input::placeholder{
+    font-style: normal !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+.info-contact .contact{
+    float: left;
+    width: 38%;
+    margin-left: 2%;
+}
+.contact h6{
+    font-weight: bold;
+}
+.contact p{
+    float: left;
+    font-size: 13px;
+    width: 100%;
+}
+.contact ul{
+    float: left;
+    list-style: none;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+.contact ul li{
+    padding: 3px 0 3px 0;
+}
+.contact ul li svg{
+    text-align: center;
+    font-size: 14px;
+    width: 30px;
+    margin-left: -6px;
+}
+.btn-feedback{
+    font-size: 14px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 7px;
+}
+.btn-feedback:hover{
+    color: #ffffff;
+    background-color: #000000;
+}
+@media only screen AND (max-width: 800px){
+    .info-contact{
+        flex-direction: column;
+    }
+    .info-contact .contact{
+        float: left;
+        width: 100%;
+        margin-left: 0;
+    }
+    .info-contact .feedback{
+        float: left;
+        width: 100%;
+    }
+    .info-contact h3{
+        margin-top: 15px;
+    }
+}

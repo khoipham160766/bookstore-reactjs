@@ -1,0 +1,111 @@
+.title-detail-order-info h5,
+.title-detail-order-product h5
+{
+    font-weight: 500;
+    color: #cc0033;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #000000;;
+}
+.line-detail-order{
+    border-left: 1px solid #c6c2c3;
+}
+.detail-order-info .status{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.detail-order-info p{
+    padding: 0;
+    margin: 0;
+}
+.detail-order-info .name{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.detail-order-info .address{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.detail-order-info .phone-no{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+/* table */
+.detail-order-product-table{
+    width: 100%;
+}
+.detail-order-product-table table{
+    margin-top: 5px;
+    width: 100%;
+}
+.detail-order-product-table tr{
+    border-bottom: 1px solid #dcdada;
+}
+.detail-order-product-table tr:last-child{
+    border-bottom: none;
+}
+.detail-order-product-table table .img-product{
+    width: 20%;
+}
+.detail-order-product-table table .img-product img{
+    margin: 3px auto;
+    width: 80%;
+    height: 120px;
+}
+.detail-order-product-table table .info-product{
+    width: 60%;
+}
+.detail-order-product-table table p{
+    padding: 0;
+    margin: 0;
+}
+.detail-order-product-table table .info-product .name{
+    margin-top: -40px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.detail-order-product-table table .info-product .type{
+   font-size: 14px;
+   color: #ada9a9;
+}
+.detail-order-product-table table .info-product .quantity{
+    font-size: 14px;
+}
+.detail-order-product-table table .price-product .price{
+    float: right;
+    margin-right:20px ;
+    font-size: 15px;
+    color: #ff0000;
+}
+.detail-order-product-table table .price-product .price::after{
+    content: 'đ';
+}
+/* detail-order-info-payment */
+.detail-order-info-payment{
+    margin-top: 15px;
+    border-top: 1px solid #bebbbb;
+}
+.detail-order-info-payment table{
+    width: 100%;
+}
+.detail-order-info-payment table td{
+    padding: 7px 0;
+}
+.detail-order-info-payment table .title-detail-order-payment{
+    width: 15%;
+    font-size: 14px;
+    color: #7d7979;
+    font-weight: 300;
+}
+.detail-order-info-payment table .price-detail{
+    font-size: 14px;
+    font-weight: 500;
+}
+.detail-order-info-payment table .price-sum{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ff0000;
+}

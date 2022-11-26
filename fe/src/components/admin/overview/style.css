@@ -1,0 +1,93 @@
+.dashboard-card-content-title{
+    text-transform: capitalize;
+}
+.dashboard-card-content-label{
+    text-transform: uppercase;
+    margin-bottom: 15px !important;
+}
+.card-item-overview .red{
+    background-color: rgba(249, 142, 142, 0.2) !important;
+}
+.card-item-overview .violet{
+    background-color: rgba(249, 171, 237, 0.3) !important;
+}
+.card-item-overview .green{
+    background-color: rgba(125, 249, 147, 0.2) !important;
+}
+.card-item-overview .yellow{
+    background-color: rgba(234, 238, 147, 0.279) !important;
+}
+.card-item-overview .line-red{
+    border-top: 2px solid rgba(247, 55, 55, 0.2) !important;
+}
+.card-item-overview .line-red button a{
+    color: red !important;
+    text-decoration: none;
+}
+.card-item-overview .line-violet{
+    border-top: 2px solid rgba(244, 62, 217, 0.2) !important;
+}
+.card-item-overview .line-violet button a{
+    color: rgb(247, 38, 188) !important;
+    text-decoration: none;
+}
+.card-item-overview .line-green{
+    border-top: 2px solid rgba(4, 250, 12, 0.2) !important;
+}
+.card-item-overview .line-green button a{
+    color: rgb(12, 190, 33) !important;
+    text-decoration: none;
+}
+.card-item-overview .line-yellow{
+    border-top: 2px solid rgba(165, 202, 15, 0.2) !important;
+}
+.card-item-overview .line-yellow button a{
+    color: rgb(172, 198, 6) !important;
+    text-decoration: none;
+}
+.icon-table-best-customer .MuiDataGrid-menuIcon{
+    display: none !important;
+}
+.icon-table-best-sell-book .MuiDataGrid-menuIcon{
+    display: none !important;
+}
+.title-best-customer{
+    width: 100%;
+    border-bottom: 2px solid #cc0033;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.table-best-customer {
+    margin-top: 15px !important;
+}
+.table-best-customer .MuiDataGrid-footerContainer{
+    display: none !important;
+}
+.crown-best-customer{
+    margin-right: 10px !important;
+    font-size: 25px !important;
+}
+.crown-best-customer path{
+    color: #dbea0d !important;
+}
+.best-sell-book{
+    margin-right: 10px !important;
+    font-size: 25px !important;
+}
+.best-sell-book path{
+    color: rgb(37, 11, 233);
+}
+.table-best-customer .css-1jbbcbn-MuiDataGrid-columnHeaderTitle{
+    font-weight: bold !important;
+}
+.table-best-customer .Mui-selected{
+    background-color: #ffffff !important;
+}
+.table-mui-grid .Mui-selected{
+    background-color: #ffffff !important;
+}
+.table-mui-grid .MuiDataGrid-selectedRowCount {
+    visibility: hidden !important;
+}

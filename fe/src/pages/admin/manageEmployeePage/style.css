@@ -1,0 +1,4 @@
+.page-edit-employee .input-box-info{
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}

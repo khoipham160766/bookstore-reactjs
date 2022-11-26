@@ -1,0 +1,70 @@
+.header-manage-customer{
+    padding: 20px 0;
+    display: flex;
+}
+/* search box */
+.header-manage-customer .search-box{
+    width: 270px;
+    margin-left: 10px;
+}
+.header-manage-customer .customer-search-box{
+    width: 200px !important;
+}
+.header-manage-customer .search-box input{
+    font-size: 15px !important;
+    padding: 8px;
+}
+.header-manage-customer  .search-box input:focus{
+    box-shadow: none;
+    border: 1px solid #000000 !important;
+}
+.header-manage-customer  .search-box .custom-button-search{
+    border: 1px solid #000000 !important;
+    border-radius: 0 !important;
+}
+.header-manage-customer .input-search-customer {
+    padding: 7px !important;
+}
+/* search date */
+.header-manage-customer  .search-date{
+    margin-left: 15px;
+}
+.header-manage-customer  .search-date input{
+    border: 1px solid #000000 !important;
+    border: 1px solid #ced4da !important;
+    padding: 7px;
+    border-radius: 5px;
+}
+.header-manage-customer  .search-date span{
+    margin: 0 9px;
+}
+/* cofirm search */
+.header-manage-customer  .button-cofirm-search-customer{
+    margin-left: 15px;
+}
+.header-manage-customer  .button-search-cofirm .button-cofirm-search-customer{
+    padding: 7px !important;
+    border: 2px solid #f81e1e;
+    width: 120px;
+    background-color: #f81e1e;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.header-manage-customer  .button-search-cofirm .button-cofirm-search-customer:hover{
+    color: #f81e1e;
+    background-color: #ffffff;
+}
+/* search status */
+.header-manage-customer .search-customer{
+    width: 170px;
+    margin-left: 20px;
+}
+.header-manage-customer .custom-select-customer{
+    height: 40px !important;
+    padding: 0 !important;
+}
+.header-manage-customer .search-customer label{
+    margin-top: -5px !important;
+    font-size: 15px !important;
+}

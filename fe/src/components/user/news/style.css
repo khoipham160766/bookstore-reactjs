@@ -1,0 +1,64 @@
+/* list new */
+.news-page .title-news-page{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
+.news-page .blog-content-card{
+    width: 100%;
+    float: left;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding:0px 0 15px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.news-page .blog-content-card img{
+    width: 100%;
+    height: 200px;
+    border-radius: 0;
+}
+.news-page .blog-content-card .mini-content-news{
+    font-size: 14px;
+}
+.news-page .blog-content-card .card-title{
+    font-size: 21px;
+    font-weight: bold;
+    text-align: start;
+}
+.news-page .style-text-muted{
+    font-size: 13px;
+    margin-top: 5px;
+}
+.news-page .blog-content-card .style-button-blog{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    float: left;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    padding: 10px 20px 10px 20px;
+}
+.news-page .blog-content-card .style-button-blog:hover{
+    color: #ffffff;
+    background-color: #000000;
+}
+.news-page .load-more-news{
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.news-page .load-more-news:hover{
+    border: 1px solid #009900;
+    color: #ffffff;
+    background-color: #009900;;
+}
+.news-page svg{
+    margin-right: 10px;
+}

@@ -1,0 +1,25 @@
+.statistical-page .title-in-out-chart{
+    padding: 10px 15px;
+    border-left: 5px solid #f81e1e;
+    font-size: 18px;
+    font-weight: 700;
+}
+.statistical-page .in-out-chart {
+    width: 100%;
+}
+.statistical-page .best-seller-type-book-chart,
+.statistical-page .new-customer-chart{
+    float: left;
+    width: 50%;
+}
+
+.statistical-page .in-out-chart .chart{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.statistical-page .best-seller-type-book-chart .chart{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}

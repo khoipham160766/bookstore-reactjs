@@ -1,0 +1,65 @@
+.user-details-register .input-box-register select:focus,
+.user-details-register .input-box-register select:valid{
+    border-color: #000000;
+    box-shadow: none !important;
+}
+.create-page-news .user-details-register .input-box-register input{
+    border-color: #000000 !important;
+    border-bottom-width: 1px !important ;
+}
+.create-page-news .user-details-register .input-box-register select{
+    padding: 10px;
+    padding-left: 15px;
+}
+.create-page-news .user-details-register .input-create-page-news-title,
+.create-page-news .user-details-register .input-create-page-news-description{
+    width: 100%;
+}
+.create-page-news .user-details-register .input-create-page-news-description textarea{
+    border: 1px solid #000000;
+    width: 100%;
+    border-radius: 5px;
+}
+.create-page-news .user-details-register .input-create-page-news-description textarea:focus{
+    outline: none;
+}
+.title-create-page-news{
+    border-left: 5px solid #cc3300;
+}
+.title-create-page-news h3{
+    font-size: 23px;
+    padding: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.btn-cofirm-create-news{
+    width: 100%;
+    text-align: end;
+}
+.btn-cofirm-create-news .btn-create,
+.btn-cofirm-create-news .btn-cancel{
+    padding: 12px 16px;
+    margin-left: 10px;
+}
+.btn-cofirm-create-news .btn-create{
+    background-color: #00cc00;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid #00cc00;
+}
+.btn-cofirm-create-news .btn-create:hover{
+    background-color: #ffffff;
+    color: #00cc00;
+}
+.btn-cofirm-create-news .btn-cancel{
+    background-color: #f81e1e;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid #f81e1e;
+}
+.btn-cofirm-create-news .btn-cancel:hover{
+    background-color: #ffffff;
+    color: #f81e1e;
+}

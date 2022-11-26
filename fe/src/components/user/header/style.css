@@ -1,0 +1,53 @@
+/* header */
+.header{
+    float: left;
+    width: 100%;
+}
+/* header left */
+.header-left{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 10px;
+    padding-left: 20px;
+    width: 70%;
+    float: left;
+}
+.header-left li{
+    display: inline-block;
+    padding: 0 12px;
+    font-size: 13px;
+}
+.header-left li p{
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-left: 5px;
+}
+
+/* header right */
+.header-right{
+    width: 25%;
+    float: left;
+}
+.header-right ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 10px;
+    padding-right: 0;
+    float: right;
+}
+.header-right li{
+    display: inline-block;
+    padding: 0 8px;
+}
+.header-right li p{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px !important;
+}
+.header-right li p:hover{
+    color: #ff0000;
+}

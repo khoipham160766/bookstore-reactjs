@@ -1,0 +1,25 @@
+.columns-status-order select{
+    width: 165px;
+    padding: 5px;
+    border: 1px solid #dedada;
+}
+.columns-status-order option{
+    margin: 5px;
+    font-size: 14px;
+    color: #000000;
+}
+.columns-status-order .status-order-wait{
+    color:#777777 ;
+}
+.columns-status-order .status-order-prepare{
+    color: #FFCC00;
+}
+.columns-status-order .status-order-delivering{
+    color: #0066FF;
+}
+.columns-status-order .status-order-complete{
+    color:#009933 ;
+}
+.columns-status-order .status-order-cancel{
+    color:#DD0000 ;
+}

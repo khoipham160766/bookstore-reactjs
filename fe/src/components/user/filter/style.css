@@ -1,0 +1,45 @@
+/* filter products */
+.title-filter-product{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
+.filter-product .btn-dark-custom{
+    font-weight: bold !important;
+}
+.filter-product .btn-dark-custom:hover{
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+.filter-product .list-filter h5{
+    font-size: 17px;
+    padding-bottom: 10px ;
+    font-weight: bold;
+}
+.filter-product .list-filter .form-check{
+    color: #777777 !important;
+    font-size: 15px;
+}
+.filter-product .list-filter .form-check-input:checked{
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* sort product */
+.title-sort-product{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
+.sort-product .form-control::placeholder{
+    font-style: normal !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+.sort-product .form-control:focus{
+    outline: none !important;
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+}

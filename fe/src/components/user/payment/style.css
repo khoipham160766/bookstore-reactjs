@@ -1,0 +1,364 @@
+.title-payment-page{
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 3px;
+    border-bottom: 3px solid #cc0033;
+}
+.main-buy .address{
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #999999;
+}
+.main-buy .address .line-top-address{
+    float: left;
+    height: 3px;
+    width: 100%;
+    background-position-x: -30px;
+    background-size: 116px 3px;
+    background-image: repeating-linear-gradient(45deg,#6fa6d6,
+                    #6fa6d6 33px,transparent 0,transparent 41px,
+                    #f9b44c 0,#eeaf4a 74px,transparent 0,transparent 82px);
+}
+.main-buy .address h3{
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    color: #cc0033;
+    font-weight: 700;
+    margin: 30px 0 0 20px;
+}
+.main-buy .address h3 i{
+    margin-right: 10px;
+    font-size: 17px;
+}
+.main-buy .address .name-buyer{
+    float: left;
+    margin: 15px 10px 0 18px;
+}
+.main-buy .address .phone-buyer{
+    float: left;
+    margin: 15px 10px 0 5px;
+}
+.main-buy .address .address-buyer{
+    float: left;
+    margin: 15px 10px 0 5px;
+}
+.main-buy .address .change-address{
+    float: right;
+    margin: 15px 50px 0 5px;
+    font-weight: 600;
+    color: #cc0033;
+    cursor: pointer;
+}
+.main-buy .address .change-address:hover{
+    color: #000000;;
+}
+.main-buy .products{
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+}
+.main-buy .products .product-title ul{
+    width: 100%;
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-buy .products .product-title li{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    padding: 20px;
+}
+.main-buy .products .product-title{
+    float: left;
+    width: 100%;
+}
+.main-buy .products .product-title .title-product{
+    float: left;
+    width: 55%;
+    color: #999999;
+    font-size: 15px;
+}
+.main-buy .products .product-title .price-title,.quantity-title,.total-title{
+    float: left;
+    width: 15%;
+    color: #999999;
+    font-size: 15px;
+    text-align: center;
+}
+.main-buy .products .content-buy{
+    float: left;
+    width: 100%;
+    border-top: 1px solid #999999;
+}
+.main-buy .products .content-buy .content-product{
+    float: left;
+    width: 55%;
+    font-size: 22px;
+}
+.content-buy .content-product img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 15px 15px 15px 25px;
+}
+.content-buy .content-product label{
+    width: 45%;
+    float: left;
+    font-size: 15px;
+    color: #000000;
+    margin: 15px 0 0 0;
+    font-weight: 600;
+}
+.content-buy .content-product .type{
+    width: 40%;
+    float: left;
+    font-size: 13px;
+    color: #999999;
+    margin: 0 0 0 0;
+}
+.content-buy p{
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 25px 0 0 0;
+}
+.content-buy span{
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 25px 0 0 0;
+}
+.content-buy p::after{
+    content:"₫";
+}
+.main-buy .products .content-buy .price-content,.quantity-content,.total-content{
+    float: left;
+    width: 15%;
+    font-size: 14px;
+    text-align: center;
+}
+.main-buy .products .note{
+    float: left;
+    width: 100%;
+    border-bottom: 1px dotted #999999;
+    border-top: 1px dotted #999999;
+    padding: 10px;
+}
+.main-buy .products .note label{
+    font-size: 14px;
+    float: left;
+    width: 7%;
+    font-weight: 600;
+    margin: 15px 15px 15px 25px;
+}
+.main-buy .products .note input{
+    font-size: 13px;
+    float: left;
+    margin: 10px 15px 15px 0px;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #999999;
+    width: 84%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #999999;
+}
+.main-buy .products .total-price{
+    float: left;
+    width: 100%;
+}
+.main-buy .products .total-price .price{
+    float: right;
+    margin: 15px 25px 15px 15px;
+    color: #cc0033;
+    font-size: 20px;
+    font-weight: 600;
+}
+.main-buy .products .total-price .price::after{
+    content:"₫";
+}
+.main-buy .products .total-price .label-price{
+    float: right;
+    font-size: 14px;
+    color: #999999;
+    margin: 20px 3px 0 0;
+}
+.main-buy .form-change-address{
+    float: left;
+    width: 50%;
+    background-color: #ffffff;
+    border: 2px solid #FF6600;
+    margin-left: 15%;
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+.main-buy .payments{
+    float: left;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 2px solid #999999;
+}
+.main-buy .payments .method-pay{
+    float: left;
+    width: 100%;
+    border-bottom: 1px dotted #999999;
+    padding-bottom: 5px;
+}
+.main-buy .payments .method-pay h3{
+    float: left;
+    width: 100%;
+    padding: 15px;
+    font-size: 23px;
+    border-bottom: 1px dotted #999999;
+}
+.main-buy .payments .method-pay span{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 13px;
+}
+.main-buy .payments .method-pay input[type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+.main-buy .payments .method-pay input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.main-buy .payments .method-pay input[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 48px;
+    cursor: pointer;
+    line-height: 20px;
+    color: #666;
+    float: left;
+}
+.main-buy .payments .method-pay input[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+.main-buy .payments .method-pay input[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #ff6600;
+    position: absolute;
+    top: 13.5px;
+    left: 17.7px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.main-buy .payments .method-pay input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.main-buy .payments .method-pay input[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.main-buy .payments .buy{
+    float: left;
+    width: 100%;
+    padding-bottom: 5px;
+}
+.main-buy .payments .buy .price-buy{
+    float: left;
+    width: 50%;
+}
+.main-buy .payments .buy .price-buy p{
+    float: left;
+    font-size: 16px;
+    color: #999999;
+    padding: 0;
+    margin: 0;
+    padding: 20px 15px 15px 25px;
+}
+.main-buy .payments .buy .price-buy span{
+    font-size: 22px;
+    color: #cc0033;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.main-buy .payments .buy .price-buy span::after{
+    content:"₫";
+}
+.main-buy .payments .buy .btn-buy{
+    float: left;
+    width: 50%;
+}
+.main-buy .payments .buy .btn-buy button{
+    float: right;
+    border: none;
+    font-size: 15px;
+    padding: 10px;
+    border: 2px solid #cc0033;
+    background-color: #cc0033;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 25%;
+    margin: 15px 25px 0 0;
+}
+.main-buy .payments .buy .btn-buy button:hover{
+    background-color: #ffffff;
+    color: #cc0033;
+}
+.form-change-address h3{
+    float: left;
+    width: 75%;
+    margin-left: 12.5%;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #FF6600;
+}
+.form-change-address i{
+    float: right;
+    font-size: 30px;
+    padding: 5px 10px 0 0;
+    cursor: pointer;
+}
+.form-change-address i:hover{
+    color: #ff0000;
+}
+.form-change-address .style-change-form{
+    float: left;
+    margin-left: 12.5%;
+}
+.form-change-address .style-change-form .change-info-button{
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 15px;
+}
+.form-change-address .style-change-form .change-info-button:hover{
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+}
