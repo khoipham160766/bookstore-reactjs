@@ -49,6 +49,9 @@ const EditBookPage = () => {
         }
         getInfoBook();
     },[idbook]);
+    useEffect(()=>{
+        setImageBook(infoBook.Hinh_Anh);
+    },[infoBook])
     // function
     const handleInputChangeBook = e => {
         const {name, value} = e.target;

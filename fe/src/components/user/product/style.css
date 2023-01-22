@@ -3,6 +3,22 @@
     cursor: pointer;
     height: 350px;
 }
+.product-page .btn-all-book{
+    float: right;
+    width: 200px;
+    padding: 5px 15px;
+    background-color: #000000;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 10px ;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #000000;
+}
+.product-page .btn-all-book:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
 .card-product:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 }
@@ -308,6 +324,18 @@
     padding-top: 20px;
     padding-bottom: 10px;
     font-size: 27px;
+}
+.spin-position{
+    text-align: center;
+}
+.spin-position-product{
+    margin-top: 200px !important
+    ;
+    width: 100% !important;
+}
+.spin-position-detail-book
+{
+    margin-top: 200px !important;
 }
 @media only screen AND (max-width: 655px){
     .see-more{

@@ -17,6 +17,8 @@ import OrderList from './components/user/order';
 import PayMent from './components/user/payment';
 import NewsPage from './pages/user/newsPage';
 import ListNews from './components/user/news/listNews';
+import ListNewsPromotion from './components/user/news/listNewsPromotion';
+import ListNewsProduct from './components/user/news/listNewsProduct';
 import DetailNews from './components/user/news/detailNews';
 // end ui user
 
@@ -65,10 +67,12 @@ function App() {
                 <Route path="recommend" element={<RecommendPage/>} />
                 <Route path="book" element={<ProductsPage/>} />
                 <Route path="book/:namecategory" element={<TypeProductsPage/>} />
-                <Route path="detail" element={<DetailProductPage/>} />
+                <Route path="detail/:idbook" element={<DetailProductPage/>} />
                 <Route path="home" element={<HomePage/>} />
                 <Route path="news" element={<NewsPage/>}>
-                    <Route path="detail" element={<DetailNews/>}/>
+                    <Route path="promotion/:id" element={<ListNewsPromotion/>}/>
+                    <Route path="product/:id" element={<ListNewsProduct/>}/>
+                    <Route path="detail/:idnews" element={<DetailNews/>}/>
                     <Route index element={<ListNews/>}/>
                 </Route>
                 <Route path="manage" element={<LayoutManageUser/>}>

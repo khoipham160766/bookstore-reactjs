@@ -15,8 +15,8 @@ class nhan_vien extends Model
         'Gioi_Tinh',
         'Dia_Chi',
         'SDT',
-        'Tai_Khoan',
-        'Mat_Khau',
+        'email',
+        'password',
         'Tinh_Trang',
         'Quyen'
     ];

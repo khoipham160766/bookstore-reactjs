@@ -7,6 +7,35 @@ import axios from "axios";
 import "./style.css";
 
 const Navigation = () => {
+    const logined = [
+        {
+            title: "Thông tin cá nhân",
+            linked: "/user/manage/account"
+        },
+        {
+            title: "Giỏ hàng",
+            linked: "/user/manage/cart",
+        },
+        {
+            title: "Đơn hàng",
+            linked: "/user/manage/order",
+        },
+        {
+            title: "Đăng xuất",
+            linked: "",
+        }
+    ];
+    const notLogin = [
+        {
+            title: "Đăng nhập",
+            linked: "/user/login",
+        },
+        {
+            title: "Đăng ký",
+            linked: "/user/register",
+        }
+    ]
+
     const [openedDrawer, setOpenedDrawer] = useState(false)
     const [openLog, setOpenLog] = useState(false);
     const [openSearchBox, setOpenSearchBox] = useState(false);
@@ -25,6 +54,10 @@ const Navigation = () => {
     const changeStateMenu = () => {
         setStateMenu(!stateMenu);
     }
+    const handleLogout = () => {
+        localStorage.removeItem("accessToken");
+        alert("Đăng xuất thành công");
+    }
     //axios
     useEffect(()=>{
         const getUserCategory = async() => {
@@ -39,7 +72,7 @@ const Navigation = () => {
                 <div className="container-fluid">
                     {/* logo */}
                     <Link className="navbar-brand" to="/user/home" >
-                        <img src="../../images/logo.png" alt="logo" className="w-logo"/>
+                        <img src="../../../images/logo.png" alt="logo" className="w-logo"/>
                     </Link>
                     {/* category  */}
                     <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? 'open' : '')}>
@@ -90,11 +123,12 @@ const Navigation = () => {
                                     LIÊN HỆ
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link to="/user/manage/account" className="nav-link" replace >
                                     QUẢN LÝ
                                 </Link>
-                            </li>
+                            </li> */}
+                           
                         </ul>
                         <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline cart-border">
                             <FontAwesomeIcon icon={faCartShopping} />
@@ -112,8 +146,18 @@ const Navigation = () => {
                                 <FontAwesomeIcon icon={faUser} />
                                 {/* <div className={"div-log " + (openLog ? 'active-div-log': '')}> */}
                                     <ul className={"div-log " + (openLog ? 'active-div-log': '')}>
-                                        <li><Link to="/user/login">Đăng nhập</Link></li>
-                                        <li><Link to="/user/register">Đăng ký</Link></li>
+                                        {
+                                            (!localStorage.getItem("accessToken"))?
+                                            notLogin.map((item,index)=>(
+                                                <li key={index}><Link to={item.linked}>{item.title}</Link></li>
+                                            )):
+                                            logined.map((item,index)=>(
+                                                <li key={index} onClick={
+                                                    (item.title === "Đăng xuất")?handleLogout:""
+                                                }><Link to={item.linked}>{item.title}</Link></li>
+                                            ))
+                                        }
+                                        
                                     </ul>
                                 {/* </div> */}
                             </li>
@@ -122,6 +166,9 @@ const Navigation = () => {
                             </li>
                             <li className="nav-item div-log-tl-mb">
                                 <Link to="/user/register">ĐĂNG KÝ</Link>
+                            </li>
+                            <li className="nav-item div-log-tl-mb">
+                                <button>Đăng xuất</button>
                             </li>
                         </ul>
                     </div>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ProductCard from "./productCard";
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,8 +7,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "./style.css";
+import axios from "axios";
 
 const SuggestProduct = props => {
+    const [listSuggest, setListSuggset] = useState([]);
+    //axios
+    useEffect(()=>{
+        const getListSuggest = async() => {
+            const response = await axios.get(`http://localhost:8000/api/searchbookincategory/${props.idcategory}`);
+            setListSuggset(response.data.data);
+        }
+        getListSuggest();
+    },[props.idcategory])
     return(
         <Fragment>
             <section className="featured best-sale">
@@ -17,37 +27,18 @@ const SuggestProduct = props => {
                     breakpoints={props.breakpoints_data}
                     navigation
                     pagination={{ clickable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                     className="style-swiper"
                 >
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ProductCard/>
-                    </SwiperSlide>
+                    {
+                        listSuggest.map((book, index)=>(
+                            (book.TT_SP.Ma_SP === props.idbook)?
+                            <div key={index}></div>
+                            :
+                            <SwiperSlide key={index}>
+                                <ProductCard databook={book}/>
+                            </SwiperSlide>
+                        ))
+                    }
                 </Swiper>
             </section>
         </Fragment>

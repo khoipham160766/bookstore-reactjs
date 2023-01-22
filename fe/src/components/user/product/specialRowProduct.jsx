@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Spin } from 'antd';
+import Spinner from 'react-bootstrap/Spinner';
 import "./style.css";
 
 const SpecialRowProduct = ({title_data, breakpoints_data, listbook}) => {
@@ -23,12 +23,12 @@ const SpecialRowProduct = ({title_data, breakpoints_data, listbook}) => {
                 >
                     {
                         (listbook.length)?
-                        listbook.map((book, index) =>(
+                         listbook.map((book, index) =>(
                             <SwiperSlide key={index}>
                                 <ProductCard databook={book}/>
                             </SwiperSlide>
                         ))
-                        :<Spin />
+                        :   <div className="spin-position"><Spinner animation="border" variant="danger" /></div>
                     }
                 </Swiper>
             </section>

@@ -18,7 +18,7 @@ const ProductCard = ({databook}) => {
                     <div></div>
                 }
                
-                <Link to="/user/detail">
+                <Link to={`/user/detail/${databook.TT_SP.Ma_SP}`}>
                     <div className="image">
                         <img src={databook.TT_SP.Hinh_Anh} alt=""/>
                     </div>
@@ -36,7 +36,7 @@ const ProductCard = ({databook}) => {
                             <button className="add-cart"><FontAwesomeIcon icon={faCartShopping}/></button>
                         </Tooltip>
                         <Tooltip placement="bottom" title="Chi tiết">
-                            <Link to="/user/detail" className="product-detail"><FontAwesomeIcon icon={faSearch}/></Link>
+                            <Link to={`/user/detail/${databook.TT_SP.Ma_SP}`} className="product-detail"><FontAwesomeIcon icon={faSearch}/></Link>
                         </Tooltip>
                     </div>
                 </div>

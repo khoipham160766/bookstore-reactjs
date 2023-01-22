@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import JoditEditor from 'jodit-react';
 import HandleModal from "../../../components/admin/handle/modal";
@@ -7,25 +7,21 @@ import "./style.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 const CreatePageNews = () => {
     const navigate= useNavigate();
     const today = new Date();
     const editor = useRef(null);
-    const [infoNews, setInfoNews] = useState({'Loai_Tin_Tuc': 'Khuyến Mãi', 'Ma_DM': 1,'Hinh_Chinh': 'abc'});
-    const [selectType, setSelectType] = useState([]);
+    const [infoNews, setInfoNews] = useState({'Loai_Tin_Tuc': 'Khuyến Mãi','Hinh_Chinh': 'abc'});
     const [showModalCancelAddNews, setShowModalCancelAddNews] = useState(false);
+    const [imageBook, setImageBook] = useState("");
+    const [imageUpload, setImageUpload] = useState("");
     //function
     const handleCloseModalAddNews = () => setShowModalCancelAddNews(false);
     const handleShowModalAddNews = () => setShowModalCancelAddNews(true);
-    useEffect(()=>{
-        const getSelectType = async() => {
-            const response = await axios.get("http://localhost:8000/api/category");
-            setSelectType(response.data.data);
-        }
-        getSelectType();
-    },[])
-    //get data
+    //function
     const handleInputChangeNews = (e) => {
         const timeNow = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         const {value, name} = e.target;
@@ -33,8 +29,21 @@ const CreatePageNews = () => {
                     'Ma_NV': 1,
                     'Ngay_Dang': timeNow});
     } 
+   
+    const handleUploadImageBook = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if(reader.readyState === 2){
+                setImageBook(reader.result);
+               // console.log(reader.result);
+            }
+        }
+        reader.readAsDataURL(e.target.files[0]);
+        setInfoNews({...infoNews, 'Hinh_Chinh': e.target.files[0].name })
+        setImageUpload(e.target.files[0]);
+    }
     //CRUD
-    const handleAddNews = async(datanews) => {
+    const axiosAddNews = async(datanews) => {
         const response = await axios.post("http://localhost:8000/api/news", datanews);
         if(response.data.status === "success"){
             swal({
@@ -45,6 +54,24 @@ const CreatePageNews = () => {
               }).then((value)=> navigate('/admin/news'));
         }
     }
+    const handleAddNews = (datanews) => {
+        const data = new FormData();
+        data.append("file",imageUpload);
+        data.append("upload_preset","imagesbookstore");
+        fetch("https://api.cloudinary.com/v1_1/dgkrtexdv/image/upload",{
+            method: "post",
+            body: data,
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+             datanews.Hinh_Chinh = data.secure_url;
+            axiosAddNews(datanews);
+          
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
+    console.log(infoNews);
     //console.log(infoNews);
     return(
         <Fragment>
@@ -66,16 +93,6 @@ const CreatePageNews = () => {
                                 <option value="Tin Tức Sản phẩm">Tin Tức Sản phẩm</option>
                             </select>
                         </div>
-                        <div className="input-box-register">
-                            <span className="details-register">Danh mục</span>
-                            <select className="form-select" aria-label="Default select example" onChange={handleInputChangeNews} name="Ma_DM">
-                                {
-                                    selectType.map((option, index)=> (
-                                        <option value={option.id} key={index}>{option.Ten_DM}</option>
-                                    ))
-                                }
-                            </select>
-                        </div>
                         <div className="input-box-register input-create-page-news-description">
                             <span className="details-register">Nội dung</span>
                             <JoditEditor
@@ -83,6 +100,19 @@ const CreatePageNews = () => {
                                 tabIndex={1}
                                 onChange={newContent => {setInfoNews({...infoNews, 'Noi_Dung': newContent})}}
                             />
+                        </div>
+                        <div className="input-box-info image-product">
+                            <span className="details-info">Hình ảnh</span>
+                            <div className="upload-image">
+                                <button type="button" className="btn-warning">
+                                    <FontAwesomeIcon icon={faUpload} />
+                                    Chọn ảnh
+                                    <input type="file" onChange={handleUploadImageBook}/>
+                                </button>
+                            </div>
+                            <div className="image-upload">
+                                <img src={imageBook} alt=""/>
+                            </div>
                         </div>
                         <div className="btn-cofirm-create-news">
                             <button className="btn-create" onClick={() => {handleAddNews(infoNews)}}>Đăng bài viết</button>

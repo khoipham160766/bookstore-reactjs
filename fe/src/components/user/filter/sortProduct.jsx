@@ -1,15 +1,12 @@
 import React, { Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch} from "@fortawesome/free-solid-svg-icons";
 
 const SortProduct = () => {
-    const test = () => {
-        console.log("abc");
-    }
     return(
         <Fragment>
             <h3 className="title-sort-product">Sản phẩm</h3>
-            <div className="row mb-3 sort-product">
+            {/* <div className="row mb-3 sort-product">
                 <div className="col-lg-3 d-none d-lg-block">
                     <select className="form-select" aria-label="sort" defaultValue="0" onChange={test}>
                         <option value="0">Tất cả</option>
@@ -25,7 +22,7 @@ const SortProduct = () => {
                         <button className="btn btn-outline-dark"><FontAwesomeIcon icon={faSearch}/></button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </Fragment>
     )
 }
