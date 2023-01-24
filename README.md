@@ -3,6 +3,6 @@
 - Bootstrap
 - Tailwindcss
 ## Back-end
-- Spring Boot
+- Laravel
 ## Database
 - MySQL
