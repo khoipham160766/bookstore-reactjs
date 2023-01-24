@@ -122,11 +122,11 @@ export const newsColumns = [
     { field: 'Tieu_De', headerName: 'Tiêu đề', width: 430},
     { field: 'Loai_Tin_Tuc', headerName: 'Loại', width: 170},
     { 
-        field: 'Danh_Muc', 
-        headerName: 'Danh mục', 
+        field: 'Noi_Dung', 
+        headerName: 'Nội dung', 
         width: 200,
-        valueGetter: (params) =>
-        `${params.row.Ma_DM.Ten_DM}`
+        renderCell: (params) =>
+        <div dangerouslySetInnerHTML={{__html: params.row.Noi_Dung}}></div>
     },
     { 
         field: 'Ngay_Dang', 

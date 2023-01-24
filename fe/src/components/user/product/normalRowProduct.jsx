@@ -43,7 +43,7 @@ const NormalRowProduct = ({title_data, breakpoints_data, idcategory, namecategor
                                 <ProductCard databook={book}/>
                             </SwiperSlide>
                         ))
-                        :<div>Chưa có sản phẩm</div>
+                        :<div className="spin-position">Chưa có sản phẩm</div>
                     }
                 </Swiper>
             </section>

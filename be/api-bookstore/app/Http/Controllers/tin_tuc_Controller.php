@@ -14,7 +14,7 @@ class tin_tuc_Controller extends Controller
 {
     public function index()
     {
-        $tin_tuc = tin_tuc::select(tin_tuc::raw('*,ROW_NUMBER() OVER(ORDER BY id ASC) AS STT'))->get();
+        $tin_tuc = tin_tuc::select(tin_tuc::raw('*,ROW_NUMBER() OVER(ORDER BY Ngay_Dang DESC) AS STT'))->get();
         $arr = [
             'status' => 'success',
             'data' => tin_tuc_resource::collection($tin_tuc)
@@ -100,5 +100,35 @@ class tin_tuc_Controller extends Controller
             'data' => [],
         ];
         return response()->json($arr, 200);
+    }
+    public function getNewsPromotion($id){
+        if($id != 0){
+            $news = tin_tuc::where('Loai_Tin_Tuc','=','Khuyến mãi')
+                            ->where('Ma_DM','=',$id)
+                            ->orderBy('Ngay_Dang','desc')->get();
+        }else if($id == 0){
+            $news = tin_tuc::where('Loai_Tin_Tuc','=','Khuyến mãi')
+                            ->orderBy('Ngay_Dang','desc')->get();
+        }
+        $arr = [
+            'status' => 'success',
+            'data' => tin_tuc_resource::collection($news)
+        ];
+        return response()->json($arr,200);
+    }
+    public function getNewsProduct($id){
+        if($id != 0){
+            $news = tin_tuc::where('Loai_Tin_Tuc','=','Tin Tức Sản phẩm')
+                            ->where('Ma_DM','=',$id)
+                            ->orderBy('Ngay_Dang','desc')->get();
+        }else if($id == 0){
+            $news = tin_tuc::where('Loai_Tin_Tuc','=','Tin Tức Sản phẩm')
+                            ->orderBy('Ngay_Dang','desc')->get();
+        }
+        $arr = [
+            'status' => 'success',
+            'data' => tin_tuc_resource::collection($news)
+        ];
+        return response()->json($arr,200);
     }
 }

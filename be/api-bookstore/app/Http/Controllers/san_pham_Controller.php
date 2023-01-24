@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\san_pham;
 // thêm lệnh use resource
 use App\Http\Resources\san_pham as san_pham_resource;
+use App\Http\Resources\book_user as book_user_resource;
 // validate
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -58,7 +59,7 @@ class san_pham_Controller extends Controller
             $arr = [
             'status' => 'fail',
             'message' => 'Không có sản phẩm này',
-            'dara' => []
+            'data' => []
             ];
             return response()->json($arr, 200);
         }
@@ -93,5 +94,37 @@ class san_pham_Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function publisher(){
+        $publisher = san_pham::select('NXB')->groupBy('NXB')->get();
+        if (is_null($publisher)) {
+            $arr = [
+            'status' => 'fail',
+            'message' => 'Lấy danh sách tác giả thất bại',
+            'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+            'status' => 'success',
+            'data' => $publisher
+        ];
+        return response()->json($arr,200);
+    }
+    public function detail($id){
+        $info_book = san_pham::find($id);
+        if (is_null($info_book)) {
+            $arr = [
+            'status' => 'fail',
+            'message' => 'Không có sản phẩm này',
+            'data' => []
+            ];
+            return response()->json($arr, 200);
+        }
+        $arr = [
+        'status' => 'success',
+        'data'=> new book_user_resource($info_book)
+        ];
+        return response()->json($arr, 201);
     }
 }

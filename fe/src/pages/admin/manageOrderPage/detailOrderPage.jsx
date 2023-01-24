@@ -31,6 +31,7 @@ const DetailOrderPage = () => {
     const {idorder} = useParams();
     const [infoOrder, setInfoOrder] = useState(defaultInfoOrder);
     const [detailOrder, setDetailOrder] = useState([defaultDetail]);
+
     // axios
     useEffect(()=>{
         const getInfoOrder = async() => {
@@ -76,7 +77,7 @@ const DetailOrderPage = () => {
                                                 detailOrder.map((detail,index) => (
                                                     <tr key={index}>
                                                         <td className="img-product">
-                                                            <img src="../../../images/book-1.jpg" alt=""/>
+                                                            <img src={detail.Thong_Tin_San_Pham.Hinh_Anh} alt=""/>
                                                         </td>
                                                         <td className="info-product">
                                                             <p className="name">{detail.Thong_Tin_San_Pham.Ten_SP}</p>

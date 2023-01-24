@@ -24,7 +24,6 @@ class tin_tuc extends JsonResource
             'Tieu_De'=>$this->Tieu_De,
             'Hinh_Chinh'=>$this->Hinh_Chinh,
             'Loai_Tin_Tuc'=>$this->Loai_Tin_Tuc,
-            'Ma_DM'=>new danh_muc_resource(danh_muc::find($this->Ma_DM)),
             'Ngay_Dang'=>$this->Ngay_Dang,
             'Noi_Dung'=>$this->Noi_Dung,
             'created_at'=>$this->created_at->format('d/m/Y'),

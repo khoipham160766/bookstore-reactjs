@@ -89,7 +89,7 @@ const OrderTable = ({listorder,loading}) => {
             renderCell: (params) => {
                 return(
                     <Tooltip placement="bottom" title={save_order_tooltip}>
-                        <div className="icon-hidden-book" onClick={()=>handleSaveStatus(params.row.id)}>
+                        <div className="icon-hidden-book" onClick={()=>handleSaveStatus(params.row.Ma_DH)}>
                             <FontAwesomeIcon icon={faFloppyDisk}/>
                         </div>
                     </Tooltip>
