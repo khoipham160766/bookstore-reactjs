@@ -8,8 +8,8 @@ const OrderList = () => {
             <div className="order-page">
                 <h3 className="title-order-page">Đơn mua</h3>
                 <OrderCard status_order="delivering"/>
-                <OrderCard status_order="complete"/>
-                <OrderCard status_order="waiting"/>
+                {/* <OrderCard status_order="complete"/>
+                <OrderCard status_order="waiting"/> */}
             </div>
         </Fragment>
     )
