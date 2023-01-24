@@ -39,7 +39,6 @@ class dashboard_Controller extends Controller
         $date_in_month = Carbon::now()->daysInMonth;
         $start = "{$nowdate->year}-{$nowdate->month}-1";
         $end = "{$nowdate->year}-{$nowdate->month}-{$date_in_month}";
-        
         $best_customer = don_hang::select(don_hang::raw('ROW_NUMBER() OVER(ORDER BY Tong_Thanh_Tien DESC) AS STT,Ma_KH'))
                     ->selectRaw('COUNT(Ma_KH) AS So_Don_Hang')
                     ->selectRaw('SUM(Thanh_Tien) AS Tong_Thanh_Tien')

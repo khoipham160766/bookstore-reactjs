@@ -36,7 +36,7 @@ const Cart = () => {
                         </div>
                         <div className="cart-title">
                             <div className="title-product">
-                                <img src="../images/book-1.jpg" alt=""/>
+                                <img src="../../images/book-1.jpg" alt=""/>
                                 <p className="content-p">Sách Văn Học Thời Kỳ Trung Đại Đến Hiện Đại</p>
                                 <p className="type">Loại: Sách</p>
                             </div>
