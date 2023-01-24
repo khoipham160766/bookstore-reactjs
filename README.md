@@ -1,8 +1,8 @@
 ## Front-end
-- ReactJS
-- Bootstrap
-- Tailwindcss
+- ReactJS v18.2
+- Bootstrap v5.2.1
+- Tailwindcss v3.1.8
 ## Back-end
-- Spring Boot
+- Laravel v8.x
 ## Database
 - MySQL
